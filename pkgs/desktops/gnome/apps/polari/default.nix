@@ -3,15 +3,13 @@
 , pkg-config, gtk3, glib, libsecret, libsoup, webkitgtk, gobject-introspection, appstream-glib
 , gnome, wrapGAppsHook, telepathy-logger, gspell, gsettings-desktop-schemas }:
 
-let
+stdenv.mkDerivation rec {
   pname = "polari";
-  version = "3.38.0";
-in stdenv.mkDerivation rec {
-  name = "${pname}-${version}";
+  version = "41.0";
 
   src = fetchurl {
-    url = "mirror://gnome/sources/${pname}/${lib.versions.majorMinor version}/${name}.tar.xz";
-    sha256 = "1l82nmb5qk4h69rsdhzlcmjjdhwh9jzfs4cnw8hy39sg5v9ady1s";
+    url = "mirror://gnome/sources/${pname}/${lib.versions.major version}/${pname}-${version}.tar.xz";
+    sha256 = "o7BfgWYDcMZ8lCtvRLKYx7eIFv6zjJJuwiEr3iLqQOs=";
   };
 
   patches = [
