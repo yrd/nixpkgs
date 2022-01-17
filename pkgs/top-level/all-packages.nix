@@ -29934,6 +29934,8 @@ with pkgs;
 
   klavaro = callPackage ../games/klavaro {};
 
+  klooni1010 = callPackage ../games/klooni1010 {};
+
   kobodeluxe = callPackage ../games/kobodeluxe { };
 
   koboredux = callPackage ../games/koboredux { };
