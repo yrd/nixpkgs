@@ -1,6 +1,7 @@
 { stdenv
 , lib
 , fetchFromGitHub
+, callPackage
 , mkYarnModules
 , mkYarnPackage
 , fetchYarnDeps
@@ -21,6 +22,10 @@ let
     sha256 = "QhaUNnhFQVUPsqL+aH0XnizBy1Fo6qcpT+JrYc7kGrE=";
 	};
 
+	extraClasspaths = [ "src" "vendor" "resources" "test" "${src}/common/src" ];
+
+	frontendDeps = callPackage ./deps-frontend.nix { };
+	frontendClasspath = frontendDeps.makeClasspaths { inherit extraClasspaths; };
 	frontendNodeModules = mkYarnModules rec {
 		pname = "penpot-frontend-modules";
 		inherit version;
@@ -33,6 +38,11 @@ let
 		};
 	};
 
+	backendDeps = callPackage ./deps-backend.nix { };
+	backendClasspath = backendDeps.makeClasspaths { inherit extraClasspaths; };
+
+	exporterDeps = callPackage ./deps-exporter.nix { };
+	exporterClasspath = exporterDeps.makeClasspaths { inherit extraClasspaths; };
 	exporterNodeModules = mkYarnModules rec {
 		pname = "penpot-exporter-modules";
 		inherit version;
@@ -43,52 +53,6 @@ let
 			inherit yarnLock;
 	    sha256 = "Ar3vX2in91RrcKH+VKOi4PJ+uw5+lDSrVmCdD8HiEmo=";
 		};
-	};
-
-	mavenDependencies = stdenv.mkDerivation {
-		pname = "penpot-dependencies";
-		inherit version src;
-
-		buildInputs = [ clojure nodejs ];
-
-		# This build script runs the clojure commands we need when actually
-		# compiling the app, but with -Spath which makes Clojure only
-		# download dependencies, output the classpath and terminate.
-		buildPhase = ''
-			export HOME=$(mktemp -d)
-
-			pushd frontend
-			ln -s ${frontendNodeModules}/node_modules .
-			clojure -Spath \
-				-J-Xms100M -J-Xmx800M -J-XX:+UseSerialGC \
-				-M:dev:shadow-cljs compile main
-			popd
-
-			pushd backend
-			clojure -T:build jar
-			popd
-
-			pushd exporter
-			ln -s ${exporterNodeModules}/node_modules .
-			clojure -Spath \
-				-M:dev:shadow-cljs compile main
-			popd
-		'';
-
-    # Maven packaging inspired by this post:
-    # https://fzakaria.com/2020/07/20/packaging-a-maven-application-with-nix.html
-    # It seems that in our setup the .m2 folder lands in /build/.m2 (no idea
-    # why), which is one folder up from the source.
-    installPhase = ''
-    	cd ..
-      find .m2 -type f ! -regex '.*\(pom\|jar\|sha1\|xml\)' -delete
-      mkdir $out
-      mv .m2 $out
-    '';
-
-    outputHashAlgo = "sha256";
-    outputHashMode = "recursive";
-    outputHash = "cCSrabfDgxLVF0OewXImQyfEmP8YFv43aZNjsMuxWXM=";
 	};
 in
 stdenv.mkDerivation {
@@ -103,7 +67,6 @@ stdenv.mkDerivation {
 
     export HOME=$(mktemp -d)
     export NODE_ENV=production
-    cp -r ${mavenDependencies}/.m2 ..
 
     #
     # Build the frontend
@@ -112,8 +75,10 @@ stdenv.mkDerivation {
     pushd frontend
 		ln -s ${frontendNodeModules}/node_modules .
 		${gulp} clean
+		echo ${frontendClasspath}
 		clojure \
 			-J-Xms100M -J-Xmx800M -J-XX:+UseSerialGC \
+		  -Scp ${frontendClasspath} \
 			-M:dev:shadow-cljs \
 			release main --config-merge "{:release-version \"${version}\"}"
 		${gulp} build
@@ -128,7 +93,7 @@ stdenv.mkDerivation {
     #
 		pushd backend
 		pwd
-		clojure -T:build jar
+		clojure -Scp ${backendClasspath} -T:build jar
 		popd
 
     #
@@ -137,7 +102,9 @@ stdenv.mkDerivation {
     #
     pushd exporter
 		ln -s ${exporterNodeModules}/node_modules .
-		clojure -M:dev:shadow-cljs release main
+		clojure \
+		  -Scp ${exporterClasspath} \
+		  -M:dev:shadow-cljs release main
     patchShebangs target
 		popd
 
