@@ -60,8 +60,8 @@ let repos = [
       inherit repos;
       artifactId = "bcprov-jdk15on";
       groupId = "org.bouncycastle";
-      sha512 = "b2d267e5d198a4c51318a53fa3cac5a769521f217ea69dd40c3d2372ea3a00d1245585f8916cad77c9a11d561aed04840c73c6095d785b598a385561f99af8ac";
-      version = "1.68";
+      sha512 = "7dccfc636ee4df1487615818cfa99c69941081df95e8ef1eaf4bca165594dff9547e3774fd70de3418abace77d2c45889f70bcd2e6823f8539f359e68eaf36d1";
+      version = "1.70";
       
     };
     paths = [ src ];
@@ -73,8 +73,8 @@ let repos = [
       inherit repos;
       artifactId = "buddy-core";
       groupId = "buddy";
-      sha512 = "0daaf122ecbb6aeb695f88a8d0c423b6bb9a467cb037dad3197e41327c1c58562ea00909b21ff1b8cdab958b4764315f4518b17cbfba21fd609ba85c7a9eabf7";
-      version = "1.10.1";
+      sha512 = "add57d2fc5e82fe2d7ec483551429a772c1699fc6de8e5678375194d58d52057332dbaaea4c7ad49d99abe28c7d5191a9776c3adf46ea43bcb4f6e651b844382";
+      version = "1.10.413";
       
     };
     paths = [ src ];
@@ -86,8 +86,8 @@ let repos = [
       inherit repos;
       artifactId = "selmer";
       groupId = "selmer";
-      sha512 = "c1eec23309037ad83b056cfb45fba1cfb9b8f0c5833783f09384cf91335730b40ae5845b8cfbf3e1b2cfc4b854581e1c4027f91ca803d924a7fa1f624f679b11";
-      version = "1.12.40";
+      sha512 = "8c71553e8ec3b5571bd5cda98ea8d5975991c22282b2b0ff65bc4dd3ca0814481569a792728b8d863e3e9a1765f18b2393e3c204736e197fe51261afbf03c904";
+      version = "1.12.50";
       
     };
     paths = [ src ];
@@ -138,8 +138,21 @@ let repos = [
       inherit repos;
       artifactId = "profiles";
       groupId = "software.amazon.awssdk";
-      sha512 = "ced7fe4a5a6f6368f8205a03ef1b6d4349cba9065cf6c991e8a3d262cd1c9d21fcda645bf3c4691ef31701c92cfbc1a2abd06dc58bb05b10f89bf4ca04fc8bac";
-      version = "2.17.40";
+      sha512 = "f3d3e50cf89c4bb9ef360411c7151f3f118619c4f2b84184a1303f592e1b417cde3d3b92a903f35628caa03771c46b2409947a5911d75cb8b2dd637468f53a14";
+      version = "2.17.122";
+      
+    };
+    paths = [ src ];
+  }
+
+  rec {
+    name = "joda-time/joda-time";
+    src = fetchMavenArtifact {
+      inherit repos;
+      artifactId = "joda-time";
+      groupId = "joda-time";
+      sha512 = "0d3993b75476050b876e5ead8a85b6db04a5cc586bd4011375b529cfac740a76b268839f5b82c3acc894fca1b583c2d6837f466b224bc262dd6db105d6b2c40d";
+      version = "2.9.3";
       
     };
     paths = [ src ];
@@ -177,8 +190,8 @@ let repos = [
       inherit repos;
       artifactId = "api";
       groupId = "com.cognitect.aws";
-      sha512 = "31d6275364e92e1d9f6e3810cd64e6f64421a3965314a5f61902c9a797808901f118f01e05dfe0bc2d4e2288432b264c8197aa5847289a46452ed4bb24e14fd5";
-      version = "0.8.536";
+      sha512 = "4592ac413b3ac3dd26d95ce42ba616cfcd97365c10eb86a05414a3c738f39c22b959c70824dbf062d0516f1c5ff4f55fb57eb689ec1c75749f157bd8d21e6e9f";
+      version = "0.8.539";
       
     };
     paths = [ src ];
@@ -216,8 +229,8 @@ let repos = [
       inherit repos;
       artifactId = "jetty-xml";
       groupId = "org.eclipse.jetty";
-      sha512 = "76962417c1eed8401a3560616709373c2c0db724aa4d15c65fc88639bfb4fb72801937fea63a9baaca3419ef22c86ccf485d014b9d3990ea641a7fa1e28176fc";
-      version = "10.0.6";
+      sha512 = "8bfb9669b86b48224f965584d6b56c9f999334708a7a749ba642d963ce057db67a973b1960185a30a434689890a7d6afdd581edd2adb5b1a6034943e31042cc2";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -229,8 +242,8 @@ let repos = [
       inherit repos;
       artifactId = "HikariCP";
       groupId = "com.zaxxer";
-      sha512 = "a41b6d8b1c4656e633459824f10320965976eeead01bd5cb24911040073181730e61feb797aef89d9e01c922e89cb58654f364df0a6b1bf62ab3e6f9cc367d77";
-      version = "5.0.0";
+      sha512 = "0a932d8c1083d3ba8eb6e004aa1783cc3f6df7424666f1d61ca6606715afbbb3da20bc0b61efd91bb3162f8092100ddad5e90fe019f818c89cc69a8d8d0bd5d5";
+      version = "5.0.1";
       
     };
     paths = [ src ];
@@ -242,8 +255,8 @@ let repos = [
       inherit repos;
       artifactId = "jetty-servlet";
       groupId = "org.eclipse.jetty";
-      sha512 = "65c1d467eda23939682823a35ee39d058b280affec38e1c53261b4d464cb56fba3bc5bb0563e36bbf908f6cedee5fa12ce3d38887132d304efc95a53a90fc736";
-      version = "10.0.6";
+      sha512 = "4fcaa3c37599223b90f564f20a16bac27a08e9e2b2733144a5140b7781b3926381729b38b1ed6a5a2f866fc7141ac07c62ef5d59d4ebc9201deede8e5aceceec";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -268,8 +281,8 @@ let repos = [
       inherit repos;
       artifactId = "endpoints";
       groupId = "com.cognitect.aws";
-      sha512 = "c5ea8379bd1d2bec5696f1b564781eaee5f00d477566613b01bd45d499ea856f850b5511cc4217fe5e39b3a88e755f8a1d80b79142c2324d140e067ac021ef7b";
-      version = "1.1.12.93";
+      sha512 = "7e5c08319fd3c79630dbf67299906efbf2e4e4aa555d612b288ac49dbc44e702b27bce236fb691072947655bb76a04eff6fc4cfec9000f7d522ab4a0c0cf11ff";
+      version = "1.1.12.129";
       
     };
     paths = [ src ];
@@ -294,8 +307,8 @@ let repos = [
       inherit repos;
       artifactId = "simpleclient";
       groupId = "io.prometheus";
-      sha512 = "ac990d9286eda0044f12b3dbaa94fb04772ee58f21b2759af862d0b506ddd2d304d4e1d82ef8dd3620d30716aed900dc21c19f869a23716a304d45da688944be";
-      version = "0.9.0";
+      sha512 = "294c6fd0a5bfd674a8014c313198bea1d5296a52096b0620f9e0e2e4c8b5a12f1c7cc2b08505fc6c1a69a62e2c292c285ae136f467ff459ffee0401e0fcb9e18";
+      version = "0.14.1";
       
     };
     paths = [ src ];
@@ -320,8 +333,8 @@ let repos = [
       inherit repos;
       artifactId = "tools.logging";
       groupId = "org.clojure";
-      sha512 = "af7fd2d53c589de7f29ed9568d14a3cd23d6276595eb73043c7b96785ce5f470e8d3ac8934963aee241b5251936cad6c88f41fce66c4927b28318c0bdfbc5237";
-      version = "1.2.3";
+      sha512 = "c7a5959ad990003962628b9ee47d0c89b728d7d7718a145806de1eb0df7799df916bcc12cc7a1ecd71613e298cea435b0b59c52fef79f4553f22f835d67d9e9d";
+      version = "1.2.1";
       
     };
     paths = [ src ];
@@ -333,8 +346,8 @@ let repos = [
       inherit repos;
       artifactId = "aws-query-protocol";
       groupId = "software.amazon.awssdk";
-      sha512 = "9903ada55069c1b0dddff7e24094265f0e06f826ed1473230a592f91f5da12248e7486799adf321d0663f46739e7775fd066339bf748066843d8b8f7698ff480";
-      version = "2.17.40";
+      sha512 = "76e225d5410b23654548db7ca9ac5845bacb40d27dd8011218c34edec97e58ce8b01fe4770f4365cbe72b7fb4af3003b42f3d8153f2797cb39ce85ae12ec0e24";
+      version = "2.17.122";
       
     };
     paths = [ src ];
@@ -359,8 +372,8 @@ let repos = [
       inherit repos;
       artifactId = "websocket-jetty-api";
       groupId = "org.eclipse.jetty.websocket";
-      sha512 = "c7b15f61e22752793e631b5c40bef99c818b1b54f7f1df7a4bc102b751b685f2df7a478479110f145abab4c1a35558f32f55b680fd512cb73061643ed7a5969d";
-      version = "10.0.6";
+      sha512 = "3a70fd06fdabd44cf2f36a69a7dd48cd7ed26887ddcdc40c7873a8eff5bec44bfcfc992a8e030ca621aa5539c6d06f83c1f894bed5067f669a140a6ae86914a9";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -385,8 +398,8 @@ let repos = [
       inherit repos;
       artifactId = "websocket-jetty-common";
       groupId = "org.eclipse.jetty.websocket";
-      sha512 = "78440166fb84c9105a6e15464534f3d2ca6f2937d89c510796ea1fe576dd5d730c06786e7c3bce8a90304c95936dd78122c39a9d6dc67617c495f4bcf54c64a6";
-      version = "10.0.6";
+      sha512 = "8e0ba83f677198f9acff347250dca2ff98027a7b8113d5d5a88d1433a492f28d4930c68e726550e346124cc0c0adee6fe52d771e035a1550bc1da28ff7e7dcc4";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -411,8 +424,8 @@ let repos = [
       inherit repos;
       artifactId = "bcpkix-jdk15on";
       groupId = "org.bouncycastle";
-      sha512 = "1d18b43537370e0c7eb29332c9f9a4f0162f9bf68a79d6df3fb76080a8b96e1e378537e5a7aff481f2e1390cf45558b18679a1557ffd3c3b670b7ba1d625e8dd";
-      version = "1.68";
+      sha512 = "477001e9556cdbe7fe9eca0c35b3ce29cd6b4d9cd5e13d1f44e3da6433d56a18e23f3679603a23730d78a93bd401113b804562c8bacb1e745e7944127f7afa4c";
+      version = "1.70";
       
     };
     paths = [ src ];
@@ -424,8 +437,8 @@ let repos = [
       inherit repos;
       artifactId = "netty-common";
       groupId = "io.netty";
-      sha512 = "b26b4e736749c5a75be06d83c08afb1645c3e748786b48c71b059c7d22b95324a5a23a0c2a8347d89124535b7f0fb66569575a675fd7f935d20e189658b8044f";
-      version = "4.1.68.Final";
+      sha512 = "9911e9cca2612a602f14e33748a657f54fa9187abe2b3274f12815d202490ad6b57e8ce26d1c181dedced19a4e9345dc32025e4624a0344f8e220ad255bddcd9";
+      version = "4.1.72.Final";
       
     };
     paths = [ src ];
@@ -437,21 +450,8 @@ let repos = [
       inherit repos;
       artifactId = "simpleclient_jetty";
       groupId = "io.prometheus";
-      sha512 = "4560eee4b19c50955391fd73193fffc91b514cb357e7fd040ae62d62e4af33917f3f9159e7b2643e52e8bf55e3c83b933c22bfff07c149cf27a5a7eb6ae34f38";
-      version = "0.9.0";
-      
-    };
-    paths = [ src ];
-  }
-
-  rec {
-    name = "kaocha/lambdaisland";
-    src = fetchMavenArtifact {
-      inherit repos;
-      artifactId = "kaocha";
-      groupId = "lambdaisland";
-      sha512 = "1b8e3f6e3ce93ae3ce2312a4df562606d4eb481b3e3f851c997ed87cebb3737a363e96b9fa6d1ea2181a4b9cf1b3b1740bfbdfc5e70caaf74bb522973f143032";
-      version = "1.0.887";
+      sha512 = "6dbedc539903e61ddc9852d20e8fbd037d7e99e6921b8edfe89d29ddd45bef80e342cfc229e65b4c542b6f31efcec16b5b4e7902f2c423df1f241f321b8d8061";
+      version = "0.14.1";
       
     };
     paths = [ src ];
@@ -489,8 +489,8 @@ let repos = [
       inherit repos;
       artifactId = "jackson-databind";
       groupId = "com.fasterxml.jackson.core";
-      sha512 = "2e7b06d78565254718954ad5ca180476ac4327a4ddd8e07d84a5cb52c55d81870cdcfd08bd54ee984e75b4b7c30e21a9100962cda6275f16106357b7cca4478f";
-      version = "2.12.3";
+      sha512 = "924977f62714ee24ef25ac8c1321df4adb09cd817505a794b52d6057a1b50e38b09b1aaaa4c5aa3960730b94dd83e369079fd87ddfde1146f4e36a76e4e6ed07";
+      version = "2.13.0";
       
     };
     paths = [ src ];
@@ -502,8 +502,8 @@ let repos = [
       inherit repos;
       artifactId = "expound";
       groupId = "expound";
-      sha512 = "19fc1c525247edd4bbcdb206452e67021ec7f787eed82dfcd017189c6d30048a9884259ffefd15feb26555fb2ef559be05a0cbe59c5af3e0850f95e2fde5ff05";
-      version = "0.8.9";
+      sha512 = "810832065897f33fd105aaf84984ee994ec5d90fe60d1a772b083bc2b1c59ff8e9e368bc0f456468824a65694f58cd47149f40b95488947ec5e5e96b44d44d1d";
+      version = "0.9.0";
       
     };
     paths = [ src ];
@@ -528,8 +528,8 @@ let repos = [
       inherit repos;
       artifactId = "apache-client";
       groupId = "software.amazon.awssdk";
-      sha512 = "e133f6345871315cb6cfb2f904e7e5a7ce5b973f7b6764c64093f18c4c138b17120eb44df817e64e70e7ef0c038a02ac48349cde01dc35aad5a0219bbd834616";
-      version = "2.17.40";
+      sha512 = "9ecde1b99093eebf413931e7d9160be189aa4b594fecc75cace23e6dfef383ee7e4d81a5170cf5f9d07f6dfe862615366aaa377f0c45858629c295831ff13396";
+      version = "2.17.122";
       
     };
     paths = [ src ];
@@ -554,8 +554,8 @@ let repos = [
       inherit repos;
       artifactId = "http2-server";
       groupId = "org.eclipse.jetty.http2";
-      sha512 = "3eb311679c749d27a23b36c951f7c5118f8af94dc39a759771993b0ea77ea5c44cc06ddc38df91588e946b04d846c97066f8907189d4b3c61988bc22d7de080d";
-      version = "10.0.6";
+      sha512 = "d4a75c7269c92e0c4609fc75e22c0ef8ecdc30f05edcdda92512357f307789455c80ac815c2f8a9777bd19cf97cf994c456f6c2624b5fddf0829f34c4c224ad6";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -575,26 +575,13 @@ let repos = [
   }
 
   rec {
-    name = "puget/mvxcvi";
-    src = fetchMavenArtifact {
-      inherit repos;
-      artifactId = "puget";
-      groupId = "mvxcvi";
-      sha512 = "2e18d3335888a394f24afd1e4d84a7f0feb4ead5878a5ad180c01c6e3cc539685b0b8df3374e71f7d2828e9f75b5b867380de055a317c7dbb7506ba8a065abfb";
-      version = "1.1.2";
-      
-    };
-    paths = [ src ];
-  }
-
-  rec {
     name = "lettuce-core/io.lettuce";
     src = fetchMavenArtifact {
       inherit repos;
       artifactId = "lettuce-core";
       groupId = "io.lettuce";
-      sha512 = "c6365f8db12b11c34fcc4187dbe6d462961f15b41a16194ac053127a7a9fc8db935ce2ca6a51d791689a77a2aad0d558068f759e6a2bcd297815b9580c7850b7";
-      version = "6.1.5.RELEASE";
+      sha512 = "3c9fed01f96286845adefe6dbe546666020ecca728bdd670db82afde3d3c42d7cf6b80acb5de356679ee177360e02edb290ebbc0a3a68a42f259604188dcd959";
+      version = "6.1.6.RELEASE";
       
     };
     paths = [ src ];
@@ -619,8 +606,8 @@ let repos = [
       inherit repos;
       artifactId = "s3";
       groupId = "software.amazon.awssdk";
-      sha512 = "c9a72a6876131de4c9203e7c5dea6f1b62bad1ca90b6917929d6d240a2738504117a59753b687638a59d1f16cc53312102f17aa6c40851233df6421c12e3d9bc";
-      version = "2.17.40";
+      sha512 = "a026b6bf9461bdd8ddd212c8dd67767d12776bc1f08b160fd208fbc14407a70d4110fd1c638dccb1f9dd08807f413851b1b96d68fc254a00b1aab3861c73ca69";
+      version = "2.17.122";
       
     };
     paths = [ src ];
@@ -658,8 +645,8 @@ let repos = [
       inherit repos;
       artifactId = "jakarta.transaction-api";
       groupId = "jakarta.transaction";
-      sha512 = "02d8b4d559073298a2c49e41bc4dddd902c5e4142a56439188d6212cf5386c966a02aed2825993a25429ca5b7291eb3b60e57e1868f0a0197390fc40c37f4c4b";
-      version = "1.3.2";
+      sha512 = "764ade8ba807682dcd1ec7382c35275f3d8ab09a03d5b45c48e732501190e2738269080aaf28aa8dd656c11ee84bfb7dae6953dd2768f2acecd3a8cf0ca4961e";
+      version = "1.3.3";
       
     };
     paths = [ src ];
@@ -671,8 +658,8 @@ let repos = [
       inherit repos;
       artifactId = "jetty-http";
       groupId = "org.eclipse.jetty";
-      sha512 = "22c06a0bad8648f635babfbd93a9266e70417d62c23d493681644896ed95b04192fdd4b68e33fa7ad43ee22ff6d4965b7959dc2c60881df24007f9bb6557eec2";
-      version = "10.0.6";
+      sha512 = "47854b76c3dfa1d359a5c4aa475d7aa4fa166881437e8b421791e09230865eabb963496c07f699cd08f866ce2b05bcba25e906c0d6ceeca13b1d4e1edc107e4e";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -684,8 +671,8 @@ let repos = [
       inherit repos;
       artifactId = "jetty-util";
       groupId = "org.eclipse.jetty";
-      sha512 = "cceb62d815904ef718df24ee5e9a63305bddbe4143ff2000ee76c55be225078fe4c9773ec760c24c4b073e88705e8d404f65dbb247c4a97f1dfd59742cf886c0";
-      version = "10.0.6";
+      sha512 = "0ee699e93fe096aeae9677b5b4d3ac4731c8170547a1dcb54bc9b5796b62ffdb4a621dbd56c6ec00315feb536b9788f29024f39b251f5c4845b97f90e88aae01";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -735,8 +722,8 @@ let repos = [
     src = fetchgit {
       name = "test-runner";
       url = "https://github.com/cognitect-labs/test-runner.git";
-      rev = "dd6da11611eeb87f08780a30ac8ea6012d4c05ce";
-      sha256 = "0ydhv733sjz7s65qdy9a968vdyd52iglxpfivyqi6sslz76r0gmk";
+      rev = "48c3c67f98362ba1e20526db4eeb6996209c050a";
+      sha256 = "14f47q9gz77y4jv848hqszn1rxw3k2rlrvh9sam5cyw0rm5pz7rm";
     };
     paths = map (path: src + path) [
       "/src"
@@ -757,26 +744,26 @@ let repos = [
   }
 
   rec {
-    name = "barbary-watchservice/net.incongru.watchservice";
+    name = "netty-codec-http2/io.netty";
     src = fetchMavenArtifact {
       inherit repos;
-      artifactId = "barbary-watchservice";
-      groupId = "net.incongru.watchservice";
-      sha512 = "94df2c848b711e49f08bafb407c9a12779eff7127b12a3b645917d4c4ff987782905de24bef479c4aa5543af9b4ccae92ce3cd5312799bf69ed75d7d00a39af1";
-      version = "1.0";
+      artifactId = "netty-codec-http2";
+      groupId = "io.netty";
+      sha512 = "d6ee6a3d716f681bc81e1feba1359dbb42863a5d31844f692035a5c2394d7f29b1bc1ba526459e11a656152b7f00eccdb013ff15d61d35fd16e278ef2b9bbcf0";
+      version = "4.1.72.Final";
       
     };
     paths = [ src ];
   }
 
   rec {
-    name = "netty-codec-http2/io.netty";
+    name = "simpleclient_tracer_otel/io.prometheus";
     src = fetchMavenArtifact {
       inherit repos;
-      artifactId = "netty-codec-http2";
-      groupId = "io.netty";
-      sha512 = "fdcb80f2900a6a6438068784db048897aa0a83cbcad57d492914138bfbcf363b62ff312ffbcbf55fa51f134fd0f1ace38444c1a8053830228de090d90cc2cf63";
-      version = "4.1.68.Final";
+      artifactId = "simpleclient_tracer_otel";
+      groupId = "io.prometheus";
+      sha512 = "3d05f19dad72fb05a81e14f22dc511c8d97df771608579b6687948bd0be8dc4b679afbe710b8d159d8024ed931a32e9cc0140a43318ceb1852ec04c7d51cebe4";
+      version = "0.14.1";
       
     };
     paths = [ src ];
@@ -788,8 +775,8 @@ let repos = [
       inherit repos;
       artifactId = "netty-codec";
       groupId = "io.netty";
-      sha512 = "39611457765449f0409a5532a5991d0ba53a4462d98f4830b427139bbd66a999f92c19fb49bd1df439be9a501d10592613445ec9ac62eefbbec5ec43d6635ae7";
-      version = "4.1.68.Final";
+      sha512 = "53ad477a34c6f8e4efda220f10575d8ac7e0b9d27bfca9814e6160a1626d3b955b9fae8091a531ad968bbee2f8ffe5ab5efc5e2c5aec099a5fbec4296edc8c0b";
+      version = "4.1.72.Final";
       
     };
     paths = [ src ];
@@ -801,8 +788,21 @@ let repos = [
       inherit repos;
       artifactId = "zstd-jni";
       groupId = "com.github.luben";
-      sha512 = "920084f05e16291cb930b4ccdfbb51bd32d27abd80283895d7136b386a27bb96c2cfe8a056e3dab6bfd58663217eec4fd8f7914afc0b427d02e94a0629ef89e8";
-      version = "1.5.0-4";
+      sha512 = "92174059714b98d4275dca1b057c857766267afe6ae2b27bfdfe50395cb90a3ec973032977a074c5ce516a3769336e6bf63d3bbde95bea165c409f1c990a651d";
+      version = "1.5.2-1";
+      
+    };
+    paths = [ src ];
+  }
+
+  rec {
+    name = "netty-transport-classes-epoll/io.netty";
+    src = fetchMavenArtifact {
+      inherit repos;
+      artifactId = "netty-transport-classes-epoll";
+      groupId = "io.netty";
+      sha512 = "2590ade253c5022dcb6f3ffd66aaaa44174128124675159d9f8ce4d47bd38fdcb8fe6c9954f669229e482a11efbb7725f1916626fcb4a54df5e4ebcd86e23527";
+      version = "4.1.72.Final";
       
     };
     paths = [ src ];
@@ -814,8 +814,8 @@ let repos = [
       inherit repos;
       artifactId = "log4j-jul";
       groupId = "org.apache.logging.log4j";
-      sha512 = "5e9a12caa1bb1aebef7c0b93d23262987e687ba039bbe48ecb5ad77f749935eb51d70bb9acde46aee117de691cd54481dcd48d4742014f1a8a476a7f71b11937";
-      version = "2.17.0";
+      sha512 = "409f06962f1155f89a8b27fc51f98abb89a839bd3bc9e68069807e11eaa64a2934dced23b196c27287420780f54772f1ae8d0f45fc64527f0d2c0acf617088b2";
+      version = "2.17.1";
       
     };
     paths = [ src ];
@@ -827,21 +827,8 @@ let repos = [
       inherit repos;
       artifactId = "jetty-annotations";
       groupId = "org.eclipse.jetty";
-      sha512 = "e1f9e8814fbb2afc674b9ef8ecf6ab0bf2b498abc35c2aa00885f221edca3d634240a35cb89c5e1547d2eefb0d9fd7dad6e3e782320236847e73045a518e1117";
-      version = "10.0.6";
-      
-    };
-    paths = [ src ];
-  }
-
-  rec {
-    name = "deep-diff/lambdaisland";
-    src = fetchMavenArtifact {
-      inherit repos;
-      artifactId = "deep-diff";
-      groupId = "lambdaisland";
-      sha512 = "7dccf8b2e260004bcfe1dde9b5ab3e24853b440173ac1f224e03650e1ffcb25d760625b2b919c1b7e913cf224217457b19278786514e34e2e85abd8ff86e94e6";
-      version = "0.0-47";
+      sha512 = "5b64266dae1d9038556bcdc2452552581d27e61121b1face8af9495d13c1306a53a38f181a1dfdfb376c3da75e593abd2e02b191e6d02a4f5fe3ebaf94eb698c";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -853,8 +840,8 @@ let repos = [
       inherit repos;
       artifactId = "third-party-jackson-core";
       groupId = "software.amazon.awssdk";
-      sha512 = "d5b1e14896d834b8ad30b88f91bc899eb3e246fc880456648a8637a42d767c887b1d7e34cc6d3906c90505d25b9206d47edddb6224e228650f09ef9d7aa46a8a";
-      version = "2.17.40";
+      sha512 = "9d35a860893a05eca98768b8edbd3bac715961ef7aee0f77f0bda5f031fd8445b0b591b73129dc82ee9808711f1c97c835b1ad5e1e06578ca29ded4b06f323fc";
+      version = "2.17.122";
       
     };
     paths = [ src ];
@@ -866,8 +853,8 @@ let repos = [
       inherit repos;
       artifactId = "jackson-dataformat-cbor";
       groupId = "com.fasterxml.jackson.dataformat";
-      sha512 = "575a00fec1760571403aaadbe0aa6c74f8bb01f40feae00741df6604e7c2bf199ac739a789bbd5d83af75ec6d9fcc55f5a1515b05aef33e0d3cc3046acad9e89";
-      version = "2.10.2";
+      sha512 = "ea5d049eac1b94666479c5e36de14d8fa4b7f24cb92f0f310d2ec2b4de66ef9023161060e67228ef2d7420a002ef861db12a29cad0864638c21612da49686f4f";
+      version = "2.12.4";
       
     };
     paths = [ src ];
@@ -879,8 +866,8 @@ let repos = [
       inherit repos;
       artifactId = "websocket-core-common";
       groupId = "org.eclipse.jetty.websocket";
-      sha512 = "5319a8ffcc2525b24a81c86fccb033b71ed11876f13ee664a7d0c92e6185adaceb88f22286bb4172fa59831e87894da81d34466ee07cd3892e1603e5e4e799ba";
-      version = "10.0.6";
+      sha512 = "69d3895752736ed45a24af21549e768f567902e5854def1d013ffa72c69768ccc3c8ddf2e5c2a2a79822b5d4fdd118cd2f3274e74e265038b7793b9d96d06b32";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -944,8 +931,8 @@ let repos = [
       inherit repos;
       artifactId = "sentry";
       groupId = "io.sentry";
-      sha512 = "31e0e73855ecb05c76ce188db5c7df496af727e013724afaec1c8f8f8544d35d313f950de98fbf906f119983fcf6198783bce2f3d02b93147e783658ae18f3f4";
-      version = "5.1.2";
+      sha512 = "c6ed255052da0ff70e1914366f06a8ac811cae956c0c44f84e29922ce5ebad652d064a37e3bc5b83d896196c78f15dff2402030959a8029aee02419db7c39702";
+      version = "5.6.1";
       
     };
     paths = [ src ];
@@ -970,8 +957,8 @@ let repos = [
       inherit repos;
       artifactId = "google-closure-library";
       groupId = "org.clojure";
-      sha512 = "cf74661c5bc4658674397e498366ed12ce8b6f6cf51cdfa4cd0ce99415203028ec0bc4b59032a73ad4bf29421a643b2e6799fcd8a35f4f1e8676b3c04900a0b3";
-      version = "0.0-20201211-3e6c510d";
+      sha512 = "85e259bd189554659fdcb2f137c7de81a8aac97669b865254c59c713e6a8b79eb4272fa1444b9bfc5d1c8447140daa53aac74cacd21527e6186cf1ec0e776d32";
+      version = "0.0-20211011-0726fdeb";
       
     };
     paths = [ src ];
@@ -983,8 +970,8 @@ let repos = [
       inherit repos;
       artifactId = "maven-model-builder";
       groupId = "org.apache.maven";
-      sha512 = "31ce438801c4e402dce94a11661da33598888189a478a7d4019cb1e5a1ba9ed99ba527812491728e41382b8fc9c726dbf2d574c3fe1851d71d5c19ddc3083eeb";
-      version = "3.8.3";
+      sha512 = "e6493b88baaab589e42286ee4965fbce6842cfbbbbfdaf441c504a22332705d1ed0537683099c2d6d11208137c35a0295898925a17aec0c63884b327f7fc2abf";
+      version = "3.8.4";
       
     };
     paths = [ src ];
@@ -1022,8 +1009,8 @@ let repos = [
       inherit repos;
       artifactId = "aws-xml-protocol";
       groupId = "software.amazon.awssdk";
-      sha512 = "80fd1a0f483dfed4c31c995c4309c35eda518994ab4c13d9ff72c34b403921b2bf1907b215175b83002ba6ccc97f5be801cbb730c47bb1e736aeb42c099fa64d";
-      version = "2.17.40";
+      sha512 = "b47f9f21a741c06c268df3b270bc297a961067f2254371b172955f6440a06705bae169b15b2ff2e5b365032512bbd7e8f328cdd2f05e0fc5f5958aa86fddd10e";
+      version = "2.17.122";
       
     };
     paths = [ src ];
@@ -1048,8 +1035,8 @@ let repos = [
       inherit repos;
       artifactId = "rewrite-clj";
       groupId = "rewrite-clj";
-      sha512 = "6e878952f453d7b6df9dd47db977623b59e6d9f6965f67b463c35e0457e45baf298378ae175b0be61c11d38e0906334e2f2862bcf3dfba60d947a2ce4c2a2fc9";
-      version = "1.0.699-alpha";
+      sha512 = "5327be3bf8f0d575e9110dee45e7cb449f906a692eb66c2a2d2fc994c23b4f7102f65b52f22a2e0f8cc5ee4672c21270519d6c0580a999337efb402050d7179a";
+      version = "1.0.767-alpha";
       
     };
     paths = [ src ];
@@ -1074,8 +1061,8 @@ let repos = [
       inherit repos;
       artifactId = "clojurescript";
       groupId = "org.clojure";
-      sha512 = "cba372c69db8ef710227434595e672d9654aad3359f3b17ee898d721e067df1691ec48a64e9b1f509e80443e4919a47ebf8e9301808abc072014a3dcb5e7e65a";
-      version = "1.10.844";
+      sha512 = "29861dc16f4275ea2019b331ec49832e42dfeae0e033599ccf31bc0e647337de4cb139f659c68a4da82ef9a699874523dd4a0406bcaacf003fc3d910d1c510a5";
+      version = "1.10.914";
       
     };
     paths = [ src ];
@@ -1126,21 +1113,21 @@ let repos = [
       inherit repos;
       artifactId = "netty-buffer";
       groupId = "io.netty";
-      sha512 = "591d6741b784ac712c855489c76e8d6bba36c9685640e522228435508fd82953ffaa9560282e70c177e1b3fcbc1d876f9f9b4415ace990dee2f6ddf1cef7ae05";
-      version = "4.1.68.Final";
+      sha512 = "fca06b40bf27cc7181ea4a8db4bc75adcef04dca099e06008a0de577aa33f041841e2e2f32a4670ac304deca628ec840fef069a01435dd769eda3bc9e829a290";
+      version = "4.1.72.Final";
       
     };
     paths = [ src ];
   }
 
   rec {
-    name = "slingshot/slingshot";
+    name = "simpleclient_tracer_common/io.prometheus";
     src = fetchMavenArtifact {
       inherit repos;
-      artifactId = "slingshot";
-      groupId = "slingshot";
-      sha512 = "ff2b2a27b441d230261c7f3ec8c38aa551865e05ab6438a74bd12bfcbc5f6bdc88199d42aaf5932b47df84f3d2700c8f514b9f4e9b5da28d29da7ff6b09a7fb5";
-      version = "0.12.2";
+      artifactId = "simpleclient_tracer_common";
+      groupId = "io.prometheus";
+      sha512 = "9b5c53c83083ceaae5810e1ccaf9a4987f720a069c3fec85ed5728d4bf12a26c990b6078614df6e3eec60a8378fdc1e827b9551ea4b72c323e4f4a0286070457";
+      version = "0.14.1";
       
     };
     paths = [ src ];
@@ -1152,8 +1139,8 @@ let repos = [
       inherit repos;
       artifactId = "clj-async-profiler";
       groupId = "com.clojure-goes-fast";
-      sha512 = "c0eeb645c44b7e1c3d98242e8fe44faad5a48375475ed238c33fdb622a1cc6f64fdd7ceaac4e6664121ebcd2f32c22522d3a745e8a45a6a78b6bee4b0a3b046e";
-      version = "0.5.1";
+      sha512 = "d695cb49bc2f4c922bdf9d786289b799e7351589a295287b68769fa3de760da641a464ce695525f89dafe3f498991ec590fcf9f95b6a1a6b293a7198deb034dc";
+      version = "1.0.0-alpha1";
       
     };
     paths = [ src ];
@@ -1165,8 +1152,8 @@ let repos = [
       inherit repos;
       artifactId = "netty-handler";
       groupId = "io.netty";
-      sha512 = "69a18e338c9bc4ad1298577d857697ef3e3c5d5fd94817e52800d9b460744dae9657a388752b3a81c1096f7530dc37fcd6f188de1d15b0791987ba18fa10e305";
-      version = "4.1.68.Final";
+      sha512 = "52c6c19e2eccade9e98dca40f87690bd2ef019588f5205b003fc93833d052360c4b2ef95048f6f046d7e441addf2184c2f0d55d9bc55acce5dcd57b8bbab7e26";
+      version = "4.1.72.Final";
       
     };
     paths = [ src ];
@@ -1191,8 +1178,8 @@ let repos = [
       inherit repos;
       artifactId = "commons-io";
       groupId = "commons-io";
-      sha512 = "6af22dffaaecd1553147e788b5cf50368582318f396e456fe9ff33f5175836713a5d700e51720465c932c2b1987daa83027358005812d6a95d5755432de3a79d";
-      version = "2.10.0";
+      sha512 = "5bd78eed456ede30119319c5bed8e3e4c443b6fd7bdb3a7a5686647bd83094d0c3e2832a7575cfb60e4ef25f08106b93476939d3adcfecf5533cc030b3039e10";
+      version = "2.11.0";
       
     };
     paths = [ src ];
@@ -1204,8 +1191,21 @@ let repos = [
       inherit repos;
       artifactId = "maven-settings-builder";
       groupId = "org.apache.maven";
-      sha512 = "6edfc7281dbb75596c6d87bcfa38b120539eb3e99e85a8763a06b27e90778b59032191b4380b3630e37e68599ef9092d04fa8ab823d9ffecd1ed45af3d9c302e";
-      version = "3.8.3";
+      sha512 = "233ebc32f26209a0f0615d8737becd396dc4d3f1ce349dbe793b437db1c64ac8c54ce055c636bbcbee7b489d0be7188b7fec0a9a4cf6a2f8d94873a374c91d3d";
+      version = "3.8.4";
+      
+    };
+    paths = [ src ];
+  }
+
+  rec {
+    name = "data.fressian/org.clojure";
+    src = fetchMavenArtifact {
+      inherit repos;
+      artifactId = "data.fressian";
+      groupId = "org.clojure";
+      sha512 = "1377e855766bdf78c1fe57a5d712205ad0895539434dbc7e9e9f1ee5c28bae02955bd3a63016ccca6f916b2cea462e5febd7642b2f9825096f6279ade85c6824";
+      version = "1.0.0";
       
     };
     paths = [ src ];
@@ -1217,8 +1217,8 @@ let repos = [
       inherit repos;
       artifactId = "websocket-core-server";
       groupId = "org.eclipse.jetty.websocket";
-      sha512 = "c503d6c127e6763b63e84af58d8adc45224e7fc93c530f6e513647bac4f0cf5ec68661f6677d9a96c61d20622ab3d334d47cf1a1048f0596504fcf1670af05b8";
-      version = "10.0.6";
+      sha512 = "a5e6d7dc088dd47af0d6920806afd3eec4bc95e4a80bd60c17869d7454dba351a4678fc6171172104487de000da3ebaa7b82c46e9cb3168623e9fe2f1e9cc6b9";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -1230,8 +1230,8 @@ let repos = [
       inherit repos;
       artifactId = "postgresql";
       groupId = "org.postgresql";
-      sha512 = "b68480b04dfd352e7b4655949a85eefea88bb6d1ecddfccb73fd5513136716f711c006ef2e104524d24bc608d83f63d54f474df65695c5c83a364a1d9b092aa8";
-      version = "42.2.23";
+      sha512 = "e28b5a2b15b7b12f3b0c76b914f9aca25867175bc87a0ca84da58e50a5c518c5de94e27ea6d570499b1320c9f8072f1022d08356e9a0e96b3bf9b1084e1f9aea";
+      version = "42.3.2";
       
     };
     paths = [ src ];
@@ -1243,8 +1243,8 @@ let repos = [
       inherit repos;
       artifactId = "tools.namespace";
       groupId = "org.clojure";
-      sha512 = "8d3b51778c09f69385eaffb9d288f53cf88310210fff9360211ef8f340dace698be0b235e28c6a953033f8b8471665033f9004382ddeecd0d30cd80ecea52da1";
-      version = "1.2.0";
+      sha512 = "4430c0d6f3974428cf99b51cd3d4ae6724401ef52257398f435dafd86dcc4294b706412f0abf9c8ac1d99eb8ab29b599210f2588df3f98ecef73651ca3088754";
+      version = "1.3.0";
       
     };
     paths = [ src ];
@@ -1256,8 +1256,8 @@ let repos = [
       inherit repos;
       artifactId = "http2-hpack";
       groupId = "org.eclipse.jetty.http2";
-      sha512 = "bacf48aae6b94024865416988698b40d302108554a4854f3cf0f4c5af68ef389280231fb0bc847979967f14e8d6967888bd5c83f5d9e91d07380a729dac5a110";
-      version = "10.0.6";
+      sha512 = "526f3d6be01822c1de1f441d3f049c3f3d3336b958f197704599b851ac8f600ab5a1f242b9604e2f0cb73f9a31dfef242e7153b74f742b164ebd154878c37dc7";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -1269,8 +1269,8 @@ let repos = [
       inherit repos;
       artifactId = "fipp";
       groupId = "fipp";
-      sha512 = "4697699e9d5b792998e8c7ab6bf08d0d84c3e88793a0ff7024c10105f0db5703bccca9c43bb7fea00c1621af0d0604c89d623d74fde771a0d2e17835e1ab87b7";
-      version = "0.6.24";
+      sha512 = "ca7399b01955ef82cea8bd25079e2d6c037d6c4440af015d861f8d5ed8762613734952758f6de3fbc89cbc258ffb265a613d7d237bed7de0a9283020d16126a2";
+      version = "0.6.25";
       
     };
     paths = [ src ];
@@ -1282,8 +1282,8 @@ let repos = [
       inherit repos;
       artifactId = "jetty-plus";
       groupId = "org.eclipse.jetty";
-      sha512 = "0aaf4ccfdee256d6581cfc3ed8734e339d17d81536bcf5769cd3587f73aab975e497fc06076b71820547b3f5c9aa64046f2361673166660214af904ce5ef616b";
-      version = "10.0.6";
+      sha512 = "89e69b7f1d5f338c767890426f495bc5edcba974ece6ef69236038e301be353a48a7e6f98c249d613b7c7420bb9da1b8a7025aef8e528179377585e090ab75f7";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -1295,8 +1295,8 @@ let repos = [
       inherit repos;
       artifactId = "jackson-core";
       groupId = "com.fasterxml.jackson.core";
-      sha512 = "bbbc4fba33448854627f9764b1e086370e607b29819884415f21d1943243b0bddc781d71d56021dea52386f1b230a344f852dc3ea0e904559b95ca60e03068ca";
-      version = "2.12.3";
+      sha512 = "8a340c9ce19fcf159fc321ff7bf7491b8d60348b472ad4af2bd6e71ef47f1b485afac4d71e734ab6bbf60541a62254ece3f7b12eedd68a88a6623837743d4bd1";
+      version = "2.13.0";
       
     };
     paths = [ src ];
@@ -1310,6 +1310,19 @@ let repos = [
       groupId = "pretty-spec";
       sha512 = "eac4574f49d307cf8df28c6c14cdfbdd2f4a34a4f6f9e9a76e9ae30509217b1e643750c31fde67f0059dff3bae0739e4d469a3ba53339640315ec4cfc00d7796";
       version = "0.1.4";
+      
+    };
+    paths = [ src ];
+  }
+
+  rec {
+    name = "clj-time/clj-time";
+    src = fetchMavenArtifact {
+      inherit repos;
+      artifactId = "clj-time";
+      groupId = "clj-time";
+      sha512 = "e39338f2133f5f6997d21f62c4f0e8dc0487ce308340bc9ea4588c16b824c111de035fadfacc6cf76260bc9d81194d5909637bb033264dc0ccfb43572e1f4a21";
+      version = "0.12.0";
       
     };
     paths = [ src ];
@@ -1334,21 +1347,8 @@ let repos = [
       inherit repos;
       artifactId = "websocket-servlet";
       groupId = "org.eclipse.jetty.websocket";
-      sha512 = "fd19f5e53688eaef4e9b691cf64533ad7d145220e9de93d9862781c79efda14cbc70524cc9dc77bae6ebd4f671a39e61fb076257810146215ce1de4da36adad2";
-      version = "10.0.6";
-      
-    };
-    paths = [ src ];
-  }
-
-  rec {
-    name = "aero/aero";
-    src = fetchMavenArtifact {
-      inherit repos;
-      artifactId = "aero";
-      groupId = "aero";
-      sha512 = "e4a90df681e1121152593e837312971ae8cdadba3014726f4a6259e2b341452287ee2e8793823da6209cd6f85b1be7ea179e713a55d81d10b4651e3c9c5cc3b2";
-      version = "1.1.6";
+      sha512 = "e52fe6fdd53bb47d91f2e2c7d2a1c5b0fff18ea8eff61e2a40aa7d9c88521ab5e4d2243f146de3f8320e95f6cad43642a555937e59679fba930d0ffa5f6b34c7";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -1373,8 +1373,8 @@ let repos = [
       inherit repos;
       artifactId = "websocket-jetty-server";
       groupId = "org.eclipse.jetty.websocket";
-      sha512 = "254c740123e323f81a0c490e3fb7880778ca53ac59561e05a2d179c2ebfc6554096d86da738a83bf46703cfe4e24e71da05d6a5757cd9a2669c02771ffbc9105";
-      version = "10.0.6";
+      sha512 = "2af0c3663049375fb3cb59d5e9fdee04759b74c652f5033f83df2e01b2c186aebd40918f251aa83d877249014e25cd1d7456c463b608df86475aabd0476e4910";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -1386,8 +1386,8 @@ let repos = [
       inherit repos;
       artifactId = "maven-settings";
       groupId = "org.apache.maven";
-      sha512 = "9135e9a135a47a6456650c098908fc4ebfe6c978c7ada08d6509834d9b5abdcaadff1e9024c9372c1e0dded4f23a98f22e261c8d5d7f8ebd306e6c4538962ec0";
-      version = "3.8.3";
+      sha512 = "3e0d2652164dbdbadccd60aba6ee2d6ca41d4065080f29f5f1654ea4884d28b054703a8a64a01cf8c6ccfa02cf8af29cab161514d8e852abcb1b3411aba74be7";
+      version = "3.8.4";
       
     };
     paths = [ src ];
@@ -1412,25 +1412,26 @@ let repos = [
       inherit repos;
       artifactId = "log4j-core";
       groupId = "org.apache.logging.log4j";
-      sha512 = "e28fa0f1cbac0d925055b4c89de3c1f7293a001574b8479b7ae912dff051ed35477847509d70586a3b7637f0f529f701235766abdfc755f261a2aaf6dc2a70b8";
-      version = "2.17.0";
+      sha512 = "8d3d6a17afc41cde43b19c9a696793d009d9271bc6430762f10157018453f8a53cde6e6aa4f3f0b703eaf1f2944d047398d29b470924ecc3290d1923b0e29750";
+      version = "2.17.1";
       
     };
     paths = [ src ];
   }
 
-  rec {
-    name = "tools.namespace/lambdaisland";
-    src = fetchMavenArtifact {
-      inherit repos;
-      artifactId = "tools.namespace";
-      groupId = "lambdaisland";
-      sha512 = "0e950a891166f7014465c811a633ff0c77da6a346f3411a66b88e1b04fc7796439ccad25bbcd1c431456a5e50b1bf0005d14294450d3006f2f5ca24020fb1abd";
-      version = "0.0-237";
-      
+  (rec {
+    name = "funcool/yetti";
+    src = fetchgit {
+      name = "yetti";
+      url = "https://github.com/funcool/yetti.git";
+      rev = "59ed2a7eec1b66c6037d7aaa961d2124ad8c60ca";
+      sha256 = "1nb0dd7c5sz836100110w9azmrqgmg6im1j2cssxyb2ds0ay9i3v";
     };
-    paths = [ src ];
-  }
+    paths = map (path: src + path) [
+      "/src"
+        "/target/classes"
+    ];
+  })
 
   rec {
     name = "httpcore/org.apache.httpcomponents";
@@ -1451,8 +1452,8 @@ let repos = [
       inherit repos;
       artifactId = "jetty-security";
       groupId = "org.eclipse.jetty";
-      sha512 = "be64bc3fd794b5df461b61aaad38e0741132266553b8bc455a20a1a9bc60e6bfa49d1ab02a0a9c86716abd7b45350c7e68df3e1e5514250d9dbd737a39207057";
-      version = "10.0.6";
+      sha512 = "43d8c3fd241b4ef0e4749f5a182076d7dc2ee9b7040502f39246530e0f3ec8128f291a0bce602628c45b15d0eb7971f587508d37cd68ec14b21aa7431d61e445";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -1498,26 +1499,13 @@ let repos = [
   }
 
   rec {
-    name = "arrangement/mvxcvi";
-    src = fetchMavenArtifact {
-      inherit repos;
-      artifactId = "arrangement";
-      groupId = "mvxcvi";
-      sha512 = "f94a0fa8f434f3a2115840729ce428adec81ebb97e649625780382e714a92074208b3e21d7dba5b15824eced4e565da02c96210f705991f6945bcde33dac67d6";
-      version = "1.2.0";
-      
-    };
-    paths = [ src ];
-  }
-
-  rec {
     name = "maven-core/org.apache.maven";
     src = fetchMavenArtifact {
       inherit repos;
       artifactId = "maven-core";
       groupId = "org.apache.maven";
-      sha512 = "f786dfde86ece3208a96f652ab2994de6b0975945a6e981900a137b6b7ad89c9d52ab05f82acf4f59872ee75a404e817bd9774f052a294b9792964252b06c5d9";
-      version = "3.8.3";
+      sha512 = "228665bba3dfe2423e4738756a3fc6e5128170ca074c905fc46ee328b8726237b9839db481785078624325d7a951a096bf0dc75f632b5f30268f2cc457871e13";
+      version = "3.8.4";
       
     };
     paths = [ src ];
@@ -1531,6 +1519,19 @@ let repos = [
       groupId = "jakarta.annotation";
       sha512 = "d1acff146c0f9ea923a9325ad4c22ba2052ec474341ab8392abab7e8abd3ca010db2400ff9b5849fc4f1fa5c0a18830eb104da07a13bd26b4f0a43d167935878";
       version = "1.3.5";
+      
+    };
+    paths = [ src ];
+  }
+
+  rec {
+    name = "netty-tcnative-classes/io.netty";
+    src = fetchMavenArtifact {
+      inherit repos;
+      artifactId = "netty-tcnative-classes";
+      groupId = "io.netty";
+      sha512 = "673032d09f7151efa7d2e7851bf38d2aa037d54d38fcedb13a6a271684120d10cf4584ede56180cb681a2269e3ffa54965dfd56ec96db8be5194d3ccc56510e2";
+      version = "2.0.46.Final";
       
     };
     paths = [ src ];
@@ -1555,8 +1556,8 @@ let repos = [
       inherit repos;
       artifactId = "log4j-web";
       groupId = "org.apache.logging.log4j";
-      sha512 = "dd9ed3baec6a8eb81fe75e56d66ce535f074cbb0d5fb1cf416127b8dde40a649e79669fad42a38bce1d1895cf45e25dff019d1bd470519a1e835c7e7a93c4eb7";
-      version = "2.17.0";
+      sha512 = "0c4dfd435e96da698dd09cb891548b2d9e8129040b4700f86a233118e5e5d72747910c6c9294552c54e23afd5f140c61728338d8e6b2209c00f7bf2f228a873d";
+      version = "2.17.1";
       
     };
     paths = [ src ];
@@ -1568,8 +1569,21 @@ let repos = [
       inherit repos;
       artifactId = "buddy-hashers";
       groupId = "buddy";
-      sha512 = "ee04b90b329e38436275192ae355069dc516a87ecaf23ac05155b6672c9bf0418efd7650ebb45dada35938e9ba6b3ec27912e8d1d7a6ab8e28c7fe8de78221b1";
-      version = "1.8.1";
+      sha512 = "49ff0d0dbf36e7dde8ca6e1ee294033ac3af12e2e1bb5e9cf9629494a403c10b4fe928f2091fc37e21fae5b83bcce574ce3ad513a121dd8d3e6819eabb56ebee";
+      version = "1.8.158";
+      
+    };
+    paths = [ src ];
+  }
+
+  rec {
+    name = "math.numeric-tower/org.clojure";
+    src = fetchMavenArtifact {
+      inherit repos;
+      artifactId = "math.numeric-tower";
+      groupId = "org.clojure";
+      sha512 = "fefa379a827412d58acf118bd522a8a325778c3ced7580fa9f132659d456bd621d85e29349914ed5d8add684c82885cf5fe62d9e2b3fecf88a5f6076dc34366a";
+      version = "0.0.4";
       
     };
     paths = [ src ];
@@ -1581,8 +1595,8 @@ let repos = [
       inherit repos;
       artifactId = "sdk-core";
       groupId = "software.amazon.awssdk";
-      sha512 = "2c86383618936446f9ba622deacfa550537df422bb3b7be41930983663b192d9d1f8add30c9f83a34a3555d4c7e126099f0b8a8024cf54e278c20eafe9d7759c";
-      version = "2.17.40";
+      sha512 = "ff802aa89f06d3ce314119dc9daf97cb80b55ee33215778b0b122fe25e1bb9563269830cb926aa7d4b1a9c8ba46bae7789fdcfbf84c4a584cd9959d222ef8174";
+      version = "2.17.122";
       
     };
     paths = [ src ];
@@ -1667,6 +1681,19 @@ let repos = [
   }
 
   rec {
+    name = "clojure-humanize/clojure-humanize";
+    src = fetchMavenArtifact {
+      inherit repos;
+      artifactId = "clojure-humanize";
+      groupId = "clojure-humanize";
+      sha512 = "6272053d813fe8568729a8f7fac3a2ad45fc1b1d773712d8329701c3165d97d886a461dacebb88f3acd06cb7c8ee90a6cf6a02cd54c51b2d1ab9a7708ccd8648";
+      version = "0.2.2";
+      
+    };
+    paths = [ src ];
+  }
+
+  rec {
     name = "truss/com.taoensso";
     src = fetchMavenArtifact {
       inherit repos;
@@ -1685,8 +1712,8 @@ let repos = [
       inherit repos;
       artifactId = "cuerdas";
       groupId = "funcool";
-      sha512 = "f52cfefdb9cf90cf43f51fae6d7e3e32e594f4cd2544afeff1a2487fddc5d4f8e986cdb2ba658aea6d8ee6034b3866cf1ee23c604d9c5f44d9cc6570c3519a0a";
-      version = "2021.05.29-0";
+      sha512 = "f268d26ec618ad3f595f22bce4167e60b25696f7a096862a66c6a61380874a533fd7717cf270390c84bb476e403381dfbf37b8d02a08fd961a32e0231d292868";
+      version = "2022.01.14-391";
       
     };
     paths = [ src ];
@@ -1698,8 +1725,8 @@ let repos = [
       inherit repos;
       artifactId = "google-closure-library-third-party";
       groupId = "org.clojure";
-      sha512 = "b0be9cdb227ce189d74a2c0e9fe8cfe53ae5608f0e00382c6c12b0087672c6caeb96890beefd9f285ca7e0c7e4bee760299e14d48512e3e37f1f274838a1693d";
-      version = "0.0-20201211-3e6c510d";
+      sha512 = "2ceef3cbba119d66a38619dc4309ee9eb5e3cccacae0a50e7f099a8df160e345e1abeaa315285fe0328c6afc842a77f6fa9d3c710745b07ce8d484caca7f47bf";
+      version = "0.0-20211011-0726fdeb";
       
     };
     paths = [ src ];
@@ -1724,8 +1751,8 @@ let repos = [
       inherit repos;
       artifactId = "regions";
       groupId = "software.amazon.awssdk";
-      sha512 = "8f4b3e4cd3576c3da9954679e4bfd7d20d63614743ef88c0a58b07ca191b10259099d80f29c7e952840335cdf6bef9f4be9a315c7c3b15462df7cdc739eb593e";
-      version = "2.17.40";
+      sha512 = "230f3faea491fe0bc91f0ae911ceabe63f2ee4535726c72b5d84a2ef81d9e693b5b9d9871b1e5bae4c36ecb06fe991b4ca903ddfec6c87c96fbf43417143e0b9";
+      version = "2.17.122";
       
     };
     paths = [ src ];
@@ -1737,8 +1764,8 @@ let repos = [
       inherit repos;
       artifactId = "jackson-annotations";
       groupId = "com.fasterxml.jackson.core";
-      sha512 = "5a1e45f0afe34eb36605b8763990f92ac5b4390432f058f682cf186bf3ba0f7325a67d4d35158ab22ac4fff025869722dd49365f19c47fc5f4c268f003ae773e";
-      version = "2.12.3";
+      sha512 = "95029364686bfd19af46bb93d6dc96262ee021452a862d6c6ddc7fbda49bca52267f0b7afc98c177fd1619907a7cbca673b8ee150b0076f8099dc605836a236e";
+      version = "2.13.0";
       
     };
     paths = [ src ];
@@ -1750,21 +1777,8 @@ let repos = [
       inherit repos;
       artifactId = "simpleclient_hotspot";
       groupId = "io.prometheus";
-      sha512 = "91358202a44fe25eba94d9962b8f827478c119f2fa51f5e65df388b0947ca922508036a72fc947c1c4c71777176ceb29e0fa5a38d28bb9df5b4ef087b49452ca";
-      version = "0.9.0";
-      
-    };
-    paths = [ src ];
-  }
-
-  rec {
-    name = "progrock/progrock";
-    src = fetchMavenArtifact {
-      inherit repos;
-      artifactId = "progrock";
-      groupId = "progrock";
-      sha512 = "68698e7d597eaf225244a321d395db1cdb01e9c4e76effd3d06499f129b8074631a68dd03c1e8739bdad94f056d6901b98d1b194fce024e72eb96b4e39b6679c";
-      version = "0.1.2";
+      sha512 = "c1c19616fcbf8675382c88d7208a5224937a6bf22569927f41b112b6e24798a81dabf9ca7b39ea411093748a86badc55efaf225ebef0ff804898726d2914e468";
+      version = "0.14.1";
       
     };
     paths = [ src ];
@@ -1789,8 +1803,8 @@ let repos = [
       inherit repos;
       artifactId = "maven-resolver-provider";
       groupId = "org.apache.maven";
-      sha512 = "3ad268c56e63cbe87f8e6a9f16ac8260213a1567baef53fc7d69cca213fc479d9a543eae91fa1166c38cf88d8225c70f4f33a7064af3190f916b5f97fd8f35ad";
-      version = "3.8.3";
+      sha512 = "26a359bf14c2c6c3a748f95a244f5bc0251ef75082155e931481f6c93b4b29db5b032ed3d6659e7241d7a166c662dab55aa41c4e7dd82bf52ae583536eda7b40";
+      version = "3.8.4";
       
     };
     paths = [ src ];
@@ -1815,8 +1829,8 @@ let repos = [
       inherit repos;
       artifactId = "jetty-webapp";
       groupId = "org.eclipse.jetty";
-      sha512 = "94bb844c13024564ab3d8d266d6a2f706c5e6d7a099c2349d20588aeb2dc547cdb95fc7bcb6a482dc54bfc495a54584a6a22b17d611cb3b1b2c3449699ad66e9";
-      version = "10.0.6";
+      sha512 = "1e2e8528642804b1d245187e87c04c8ce414936e95d9baebedbe53a1dcd0e0369e1717f908358a51f365b1a93216cdaef1f0d6f0ebe9e3ecb2b3515859a5f557";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -1880,8 +1894,8 @@ let repos = [
       inherit repos;
       artifactId = "tools.deps.alpha";
       groupId = "org.clojure";
-      sha512 = "204ac11ea37e817e8dcd147b9cd6b05785c025af2733bb3f757b8cc2f4452beefe3bafba553633b8bfc848d613f986964187aee3486ee30adb413358ce57775c";
-      version = "0.12.1090";
+      sha512 = "95c53bb637f02dcd2061a26262067ef52a45cdeb780dc8e7d3a1de82b673fefbc16cf07eb56c4289563b1f2dae151c710c13918bc411894ee614358f3270dcfa";
+      version = "0.12.1109";
       
     };
     paths = [ src ];
@@ -1940,19 +1954,6 @@ let repos = [
   }
 
   rec {
-    name = "netty-transport-native-epoll/io.netty";
-    src = fetchMavenArtifact {
-      inherit repos;
-      artifactId = "netty-transport-native-epoll";
-      groupId = "io.netty";
-      sha512 = "e705a248dbff66eafc68cddba1bbffe7c55e2b47ad10aaf154dc50b9ba6aa95abed95f99dd03c7e69246866a2c265058de5408f8d2060ff2e5ee7f55a900433e";
-      version = "4.1.68.Final";
-      classifier = "linux-x86_64";
-    };
-    paths = [ src ];
-  }
-
-  rec {
     name = "data.xml/org.clojure";
     src = fetchMavenArtifact {
       inherit repos;
@@ -1971,8 +1972,8 @@ let repos = [
       inherit repos;
       artifactId = "aws-core";
       groupId = "software.amazon.awssdk";
-      sha512 = "52a565e3d1a16ef1fe3f7be41b0b3e4cbcf3eb93c4463368d67ed0299958659d4f2bf00633748ec1cb2f354f5dd9e6acb8535804de05b6fd5d6893bb9d1fe7a5";
-      version = "2.17.40";
+      sha512 = "7abac1d02d54a011c0050ac7c059e969657134c904f234ddd7c364b68b182a24bf72a0b938876c39283b8e5825ac0d3e0f63a49b89fdcb815058efeb1119473f";
+      version = "2.17.122";
       
     };
     paths = [ src ];
@@ -1997,8 +1998,8 @@ let repos = [
       inherit repos;
       artifactId = "log4j-slf4j18-impl";
       groupId = "org.apache.logging.log4j";
-      sha512 = "99eea70960abbe3f672cfdb9dd235bdfb4abc0ae0c9cf3b3ae95d91f5c61800639756a0412426696d92f2316980f2f178994dcd83d229c288df4207f996ba0ab";
-      version = "2.17.0";
+      sha512 = "d001170cac70e8f4df228cb813d52bab714fd3026d653eea4dd4827ce18df74b4b0f08525966e48be0ae3dae068e92fbcb5aa16e441ac01fafa1c3af21e1ba0c";
+      version = "2.17.1";
       
     };
     paths = [ src ];
@@ -2010,8 +2011,8 @@ let repos = [
       inherit repos;
       artifactId = "http2-common";
       groupId = "org.eclipse.jetty.http2";
-      sha512 = "771a96b521e6f300433222470a4554efc00775ee819af75a4e5380da1b83039894e6d3a2ad324e43b48bffc681fe2ab3347755a300da3838d1f0fea9b3a7dba1";
-      version = "10.0.6";
+      sha512 = "fa5eb8ab2784a26ad9ff83bb3438a9587e38ab99d9f3a7bf9e200c6738bad5c4b2a7147919c27460773fe40b4621c025388f85ed223089d3e8474eaadcdc2e9b";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -2049,8 +2050,34 @@ let repos = [
       inherit repos;
       artifactId = "data.csv";
       groupId = "org.clojure";
-      sha512 = "b039775a859ed27eca8f8ae74ccb6afde3ad1fe2b3cbe542240c324d60fe1237e495eb1300ee9eb4ff4ef59f01faf7aec6ef1dd6a025ee4fe556c1d91acfcf1b";
-      version = "1.0.0";
+      sha512 = "6b667a56cbb6632a90564f217f9c28a6670c13c729fb205ced091d9ee006382143dd6b615dd5a4f900660946199cac449fe9fabc90820bb34b92a9e6c8550473";
+      version = "1.0.1";
+      
+    };
+    paths = [ src ];
+  }
+
+  rec {
+    name = "simpleclient_tracer_otel_agent/io.prometheus";
+    src = fetchMavenArtifact {
+      inherit repos;
+      artifactId = "simpleclient_tracer_otel_agent";
+      groupId = "io.prometheus";
+      sha512 = "bcd8c5bacf77784a7e86fd17d94326a2ba5ea01c54fc8f8a82c79cba4fd3ef973711492141d809cbcfad53923aa1893d8a313a85a4554fb82cbbd0c399e7450b";
+      version = "0.14.1";
+      
+    };
+    paths = [ src ];
+  }
+
+  rec {
+    name = "slf4j-nop/org.slf4j";
+    src = fetchMavenArtifact {
+      inherit repos;
+      artifactId = "slf4j-nop";
+      groupId = "org.slf4j";
+      sha512 = "3d178b92f340339b8473de9effac62b494c01c2b003d578f693052ad422f3fb653df70ac52a752aa2fd84bac3d87014bbc58beb84406154b8c8bad3470fafa7e";
+      version = "1.7.32";
       
     };
     paths = [ src ];
@@ -2088,8 +2115,8 @@ let repos = [
       inherit repos;
       artifactId = "next.jdbc";
       groupId = "com.github.seancorfield";
-      sha512 = "a4a3d44d50ccc1d534eaed34c12bc9fabe9f2329e96a92c5a0f5020fa6bf1393dd2224058217488f8fa88738f3da7b2c316d5c724473f61f6ae4d5ece837e57a";
-      version = "1.2.709";
+      sha512 = "0b4b01ba126bb8b1e2c14262db9fca75456b274d09535d9a7bb386699bf20dc9ac11590d210769e7429ca59ebfdfbb06916b3ff275cc817d74eac5bbabdab8f2";
+      version = "1.2.761";
       
     };
     paths = [ src ];
@@ -2101,8 +2128,8 @@ let repos = [
       inherit repos;
       artifactId = "json-utils";
       groupId = "software.amazon.awssdk";
-      sha512 = "d2570758cc19657f958f75d9d36508687802161a187f0a9b66a2f84a69cf77d3bba548af26929a964ebc2f4262d588b20db48f9fac80330132c5410769d70d50";
-      version = "2.17.40";
+      sha512 = "daf85b8f39f33bee3bf304741234bc325237925221bbae964d86b8db5fd09bf1db212b2ac621461e92bea4b720efb847f5c4d0db875eb6e3a31e521df35f0113";
+      version = "2.17.122";
       
     };
     paths = [ src ];
@@ -2114,8 +2141,8 @@ let repos = [
       inherit repos;
       artifactId = "netty-transport";
       groupId = "io.netty";
-      sha512 = "a2d4e31457cca06ef04854dece6f8845c8c2efcaef55892054722d5a695a1b31473b9d47fb90e4362babfddff32bd936f0124068a258b66a719227e54dbde424";
-      version = "4.1.68.Final";
+      sha512 = "3f3ae28f47d9f62bcb806065f0d68d8ca168bf5de18b52392ff7f69b9f6cd000f82ce71b84f767a09c5ca9bcc5d8977cc9889a219bd3bc1b6fba15f6b2f41082";
+      version = "4.1.72.Final";
       
     };
     paths = [ src ];
@@ -2127,8 +2154,8 @@ let repos = [
       inherit repos;
       artifactId = "asm-commons";
       groupId = "org.ow2.asm";
-      sha512 = "68c21ff751756cdd4c01f8ca9be110be86e1e694b818b4958e489f3ed47d1a3b3c9210a1f14d078200b0fec5230f817a793551ad7a6dec84b7d948a234a12247";
-      version = "9.1";
+      sha512 = "d5bd27f9b8b4eea93635ceda3891665fc9db273818eb02d40da4b110b81524458de3f71a63e87d6bec9423ba0f2e14c20ecdf7706dfeb54f0b05aedb13a63ecc";
+      version = "9.2";
       
     };
     paths = [ src ];
@@ -2140,8 +2167,21 @@ let repos = [
       inherit repos;
       artifactId = "auth";
       groupId = "software.amazon.awssdk";
-      sha512 = "63fef5856c38f21b06b2b1f3e3d951e5e3cdc5176da20597f1b6878eaa74b3b78f66f68a3c60a00ecc2ce22eb3a86ad2d315f5834f16011a126b1305a870e799";
-      version = "2.17.40";
+      sha512 = "941a53def1f7e819ceff90ba9bb4d1c42f66e0b44c2b22e91442dae870d28f65fd9c2db27324d3bdc59cf140df3fbd5cb448418f29a1415176916b6b429814da";
+      version = "2.17.122";
+      
+    };
+    paths = [ src ];
+  }
+
+  rec {
+    name = "fressian/org.fressian";
+    src = fetchMavenArtifact {
+      inherit repos;
+      artifactId = "fressian";
+      groupId = "org.fressian";
+      sha512 = "30aedc721f7627a308ebb08c27672fedd668c3297ac6de79303f79457d97b66166611920f2ec273f3558850767c16d535fbae6e468760491d43c2da3892bcfcf";
+      version = "0.6.6";
       
     };
     paths = [ src ];
@@ -2166,8 +2206,8 @@ let repos = [
       inherit repos;
       artifactId = "netty-transport-native-unix-common";
       groupId = "io.netty";
-      sha512 = "da97ae017829532d407dc39e54700ddfdeb5d53607590efb5c0b1439791efe7f2888670c462b5bda9b8fde01d84f3c50fbdccbe9e01af4362f7ad7337b3da486";
-      version = "4.1.68.Final";
+      sha512 = "726b5a5f17661dc5add0426b5b8a33f2c45c45dd6086ad201170c27fc25f92bcc4efad174ccea07768780dd54f95eb53c12dd21b1c5dd05f9bac7ebe9030d4ce";
+      version = "4.1.72.Final";
       
     };
     paths = [ src ];
@@ -2179,8 +2219,8 @@ let repos = [
       inherit repos;
       artifactId = "http-client-spi";
       groupId = "software.amazon.awssdk";
-      sha512 = "0a37119bec5c0b2a544859c96a0eb799a7a2206bc111b23bc0ea445ea58bf96ea029e1a4fd19d39b04163f719f54db8b33cbbf4003624cbf2d582341d6f4acf8";
-      version = "2.17.40";
+      sha512 = "f323092ccf94ec69625b18b854f9da9c7fe45b5e79431a27dbab77d29305499e368d2615c7f8d94f7e3c0ed6dcf432f8fab2a0bfe703530d2e69dcbeae5ed518";
+      version = "2.17.122";
       
     };
     paths = [ src ];
@@ -2192,8 +2232,8 @@ let repos = [
       inherit repos;
       artifactId = "simpleclient_httpserver";
       groupId = "io.prometheus";
-      sha512 = "3f09336782afeaed75dbfb1f08064e41dabe7285f32c85a0e77808031fe95c6ad5af1ab7340a01a069f3090fe7a23bbcbf72fccb901290075a7b38caaebad484";
-      version = "0.9.0";
+      sha512 = "f2003cc777a9b5009b7582703c3f3bf647e9a2c56c9a85485fd061398ad3257bdcde874d5f406b59f3bb3dc50e4fb5becea9b306adb3acd965f1dec332458711";
+      version = "0.14.1";
       
     };
     paths = [ src ];
@@ -2205,8 +2245,8 @@ let repos = [
       inherit repos;
       artifactId = "clj-yaml";
       groupId = "clj-commons";
-      sha512 = "b6cfdd848431eff4df30cf27e644440c82b18a316d813d1ef620f80102d8d47973b33c9b6c46bc187c5800da939ef47cd0e43602e15c65c8f19e9abb82fb6d38";
-      version = "0.7.107";
+      sha512 = "a9723bc593559d7081c37bb5920eb2d7d25b0ef18ce0b6721ae68050114089cb3a2cc5141b98d780c808f5199bc670e8295f3257f4b56ba1baca5819666e8683";
+      version = "0.7.108";
       
     };
     paths = [ src ];
@@ -2218,8 +2258,8 @@ let repos = [
       inherit repos;
       artifactId = "netty-codec-http";
       groupId = "io.netty";
-      sha512 = "2f39c8b332e64d9c76b3cc0feb122fd774910089822074ff68bad3530c88541131929a55838b579776d2fdaa7ec6d5c25942463ef4961ae84fe3c216aa129938";
-      version = "4.1.68.Final";
+      sha512 = "533c0e5c21f16df1ca0c40aee351a3ec3b06d5d658766964d3b0420137f564eccb2697ce1f2eec90943dac60f746cf8db27cd39b8135f2ac4e54e6d598a31795";
+      version = "4.1.72.Final";
       
     };
     paths = [ src ];
@@ -2270,8 +2310,8 @@ let repos = [
       inherit repos;
       artifactId = "protocol-core";
       groupId = "software.amazon.awssdk";
-      sha512 = "b6e7c587c96199fe7c126954646c9d8f48c0b33f665991b9e0c225964c70607cf348d61252a482d96f99a8e8cf74efd8bfff8b0fa468e58da76b6e52a365e55b";
-      version = "2.17.40";
+      sha512 = "844ac82fce0ca449169a2344e0dbd87fa2a041fe98175d525a96d7e7c1ccc351aa60b0a405526edb24bd18563fb629d02b3a9fd887eed167f70b0f54d0e89e8c";
+      version = "2.17.122";
       
     };
     paths = [ src ];
@@ -2283,8 +2323,8 @@ let repos = [
       inherit repos;
       artifactId = "core.rrb-vector";
       groupId = "org.clojure";
-      sha512 = "7b6546bbd0ff8c7755382a5460029f57f562529ef66fc6ca473c4ba30d897ac5ff0aec8db737da9deeb732fccdd35c9c2317c256b7703e8e5804d1098e9bf77b";
-      version = "0.1.1";
+      sha512 = "8204b559d2704105741e1c9a5b8c639161a4f4af09e18b93d6af23685dd8bdebd66b64e626a4daa69069759c423640b3a3787216b78c2e62c891650e2269e8a0";
+      version = "0.1.2";
       
     };
     paths = [ src ];
@@ -2309,8 +2349,8 @@ let repos = [
       inherit repos;
       artifactId = "promesa";
       groupId = "funcool";
-      sha512 = "7158b61538c58d673aa9f2b82a48b1abc99f5b1b87203d7e4475f9eb63a4f29745308ff01a532f91fb83c36d2e2ee21e37da26fcef757ff182ecfb0bd4237f9e";
-      version = "6.0.1";
+      sha512 = "8dc3733efb86d2383d62296d4d3e10c3425de802da11f342fc000927711b98e3f2acca8891f6334f5217b6cefb5f852f41a31b057a47b270e69ae2db570416c3";
+      version = "7.0.444";
       
     };
     paths = [ src ];
@@ -2337,19 +2377,6 @@ let repos = [
       groupId = "java-http-clj";
       sha512 = "50b1037b9b33da63bcf9624eb0b778c6f6de50d7bb756eccb925235e18fd74de6f3e83ae243e072b4ae64d10a3fba151c8ffaaa006657d5c9b493eb9a04eb209";
       version = "0.4.3";
-      
-    };
-    paths = [ src ];
-  }
-
-  rec {
-    name = "jna/net.java.dev.jna";
-    src = fetchMavenArtifact {
-      inherit repos;
-      artifactId = "jna";
-      groupId = "net.java.dev.jna";
-      sha512 = "a380b303d5ece14b3a45dbac8d06e3f39fe5e09f3a5d08c161262c47a14326a9f5cbcdc56d6fabf6efcdb7449c4a2e43e696ec6c8c35730fb34a2993c6647948";
-      version = "3.2.2";
       
     };
     paths = [ src ];
@@ -2387,8 +2414,8 @@ let repos = [
       inherit repos;
       artifactId = "cheshire";
       groupId = "cheshire";
-      sha512 = "5b2a339f8d90951a80105729a080b841e0de671f576bfa164a78bccc08691d548cff6a7124224444f7b3a267c9aca69c18e347657f1d66e407167c9b5b8b52cb";
-      version = "5.10.0";
+      sha512 = "855e9c42a8d1c64f4db5cda45e31e914eb5ed99a715e8d7a5759a9c4ab6c69a82353635ca7b0837880c6cf9b41b11184ae11e09cbf2c07aa13db32c539e5dfd4";
+      version = "5.10.1";
       
     };
     paths = [ src ];
@@ -2439,8 +2466,21 @@ let repos = [
       inherit repos;
       artifactId = "arns";
       groupId = "software.amazon.awssdk";
-      sha512 = "902f39f9f9099daccac9bfb4fa69fa66d634f0b9bc9736a9b840a246291f7a4f42a4b86e0261b2d3eb173dfb5245fbc30050ec8676e9a61d76b82494276dd2f9";
-      version = "2.17.40";
+      sha512 = "3e61cf4b7f6d542d890fe36a052d233bbc3c204a5a51c5b9ca90b75ef92eb30bd4e04a8d299782267c83db626957635cae28e3d577556d77fcd5c9b54cb3b23d";
+      version = "2.17.122";
+      
+    };
+    paths = [ src ];
+  }
+
+  rec {
+    name = "cljs-time/com.andrewmcveigh";
+    src = fetchMavenArtifact {
+      inherit repos;
+      artifactId = "cljs-time";
+      groupId = "com.andrewmcveigh";
+      sha512 = "f1f9c13f1bc0d71f64d40eee94aef3b202e94b220e408183ac4ff7995ac5db1521c67e8e02a3b12896ebff1d4568b63e7415c2a945854396095b0f337fcc4899";
+      version = "0.4.0";
       
     };
     paths = [ src ];
@@ -2452,8 +2492,8 @@ let repos = [
       inherit repos;
       artifactId = "jetty-jndi";
       groupId = "org.eclipse.jetty";
-      sha512 = "f7c57ca71ed62e9853a569c65145fb51893c7ba2d7563cef174397a08d308312703a995ec1e8cea95504bf4b1958535b0eaa0f0b803bc0eae7f958e2e91de69a";
-      version = "10.0.6";
+      sha512 = "d2b80c52a768d9a1a8b65abb6816e6a363153831f43680f7d5599bee2383e570c72ac1eb91e3fb7079090ed04c6ae14b39da83d5042f9236e7963efc5c811dda";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -2465,8 +2505,8 @@ let repos = [
       inherit repos;
       artifactId = "jetty-io";
       groupId = "org.eclipse.jetty";
-      sha512 = "ccfb25e99a116519597ffb6dd5159b922c0f7d8863f7ffd083cbd48b8feaa391f4db3c51a278c57fe4406afd852f3459cb357a3a93437faca1b81748ec28288e";
-      version = "10.0.6";
+      sha512 = "07f4b069ad77146932e937ea983e5a562d1e1a3b429d1f62c4a2b5f385d128eddd56183d953e216d1928f02fdeb95e803589726d756fd3f362bbf24e75e5090a";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -2491,8 +2531,8 @@ let repos = [
       inherit repos;
       artifactId = "simpleclient_common";
       groupId = "io.prometheus";
-      sha512 = "b9eebbe200cedfae9de0c9d031abd1cf14af2c6b17cf9f040c05a661c07b98300afd52f0b88c1a8413433ea116e36a60c87a4c7ae11803ef7280be9e012d0283";
-      version = "0.9.0";
+      sha512 = "4a2fefbe414e8822fdb54402cd6fd43ff50fc6ccbb938466d68a30b4ba8e544d79396eb5d6fb554224bee4dd391aee4aca12b5abfc5ecd6195fdbe94854d86f7";
+      version = "0.14.1";
       
     };
     paths = [ src ];
@@ -2512,13 +2552,13 @@ let repos = [
   }
 
   rec {
-    name = "dynapath/org.tcrawley";
+    name = "bcutil-jdk15on/org.bouncycastle";
     src = fetchMavenArtifact {
       inherit repos;
-      artifactId = "dynapath";
-      groupId = "org.tcrawley";
-      sha512 = "896fb4c7595117e95742715f96ac7f86e1009e6c7c0077a1e2b42450f38783578c7608d004ffd9cb9dbd6c008aeab41d58eb165e1ffa8b7eaddc9bc801ae78a0";
-      version = "1.1.0";
+      artifactId = "bcutil-jdk15on";
+      groupId = "org.bouncycastle";
+      sha512 = "f65fc2af60be9b4a0cfa227cede3ba5ef994716dcd462a9935ef74535a32e67c56cff92e6af9d5168c7a866e5f7c9fd17797485b89eb020eda12f7018af0fca1";
+      version = "1.70";
       
     };
     paths = [ src ];
@@ -2556,8 +2596,8 @@ let repos = [
       inherit repos;
       artifactId = "jsoup";
       groupId = "org.jsoup";
-      sha512 = "a0705121b33359ebfe2bbf747e46874dfc7b0bd090904acad34434185b34e52862c811e3b98f75f64ac104a4aabacb6fb5c762bdc57711d5bdf7c162d34b70db";
-      version = "1.14.2";
+      sha512 = "d06e42e2da5b852a966e137d9e5915d091c4e35d52ca0034e52bd938bc85f74b8c951238c138ce22086bf2ce20c72047c4d70e816a3e19fc42c1bae3d74533cb";
+      version = "1.14.3";
       
     };
     paths = [ src ];
@@ -2608,21 +2648,8 @@ let repos = [
       inherit repos;
       artifactId = "antq";
       groupId = "com.github.liquidz";
-      sha512 = "aefb509a061ec192fbe84ba3c204bcea2c436b4d78d829a0fa42aa7cb57a1c6778cbf32d3c7abe6cfd6c143d873c20defc4d402cb31179e350fe3a875e420708";
-      version = "1.3.2";
-      
-    };
-    paths = [ src ];
-  }
-
-  rec {
-    name = "ring-jetty9-adapter/info.sunng";
-    src = fetchMavenArtifact {
-      inherit repos;
-      artifactId = "ring-jetty9-adapter";
-      groupId = "info.sunng";
-      sha512 = "3961d2803099218bfa724149a1451639904420aab1cdc91418e7d368f97f5b5c340c7605c33e8a1d442a4e303415e314cdb05a7dc5e2e45650d4cb9d1f925917";
-      version = "0.15.2";
+      sha512 = "dd645b8252d369bda82097f4b06a64474679371c18d3c2557718655538a4a2e3d44b48c74e1176aa116960a7edb596e65d6d4f0744bd6d8e428ded889307bdc7";
+      version = "1.6.2";
       
     };
     paths = [ src ];
@@ -2647,8 +2674,8 @@ let repos = [
       inherit repos;
       artifactId = "netty-resolver";
       groupId = "io.netty";
-      sha512 = "b944c251b80b4f5efce03dc2e7149e19327764ca18b81e66d530e6853b1e0cfea809fb031982359af74d0f4193bb9b438c5fc307d53da59473c2d606e326497e";
-      version = "4.1.68.Final";
+      sha512 = "e9efcf1255cf016fdbc9f1a92d4744f24a97bddfeff51389241267d6122d79c234223a0a4665cc3dc436af4817c864304710ee70d9590b229bd40d6aa07e58f5";
+      version = "4.1.72.Final";
       
     };
     paths = [ src ];
@@ -2673,8 +2700,8 @@ let repos = [
       inherit repos;
       artifactId = "metrics-spi";
       groupId = "software.amazon.awssdk";
-      sha512 = "3df1b08c124bdcadeea0aeb9d7c45782fcaa078604705c2c1e86828ab2d99ea11427b9f6a20b60b7f5922c65166c265ec75e5e962881d5baa8b98fabc599321d";
-      version = "2.17.40";
+      sha512 = "8b050eb749ec4042835a819044f561697885ff4595c0f55f0184c9d594b711e2bddb44d60f7069f5a0a8e51f7f1a083a3d69107b04d17a44be0da54a372b56d8";
+      version = "2.17.122";
       
     };
     paths = [ src ];
@@ -2693,14 +2720,28 @@ let repos = [
     paths = [ src ];
   }
 
+  (rec {
+    name = "io.github.clojure/tools.build";
+    src = fetchgit {
+      name = "tools.build";
+      url = "https://github.com/clojure/tools.build.git";
+      rev = "34727f790d0b4d568fe3b5699ce6ebfcc1f55d39";
+      sha256 = "0glmy4hp54dhlhd1h99z84qi8zlz1bk6dz9p7zidynan6g656ar5";
+    };
+    paths = map (path: src + path) [
+      "/src/main/clojure"
+        "/src/main/resources"
+    ];
+  })
+
   rec {
     name = "utils/software.amazon.awssdk";
     src = fetchMavenArtifact {
       inherit repos;
       artifactId = "utils";
       groupId = "software.amazon.awssdk";
-      sha512 = "dd38143e1c8e42870a3c424e7d89a0726b2285279fac8a93876a90570d549bb1ead713d9608caa6ba680b24271957fe73a1ca30b3138cf7badccd4331dd7b454";
-      version = "2.17.40";
+      sha512 = "56427b221e7e47adac214d76e528e24b8530a9b097c905f77729a44eefe18a63ea2be1a1a7c494c6ea2fbd4982eb6cae53810de03fb76a83c3f8b4d67b005d1d";
+      version = "2.17.122";
       
     };
     paths = [ src ];
@@ -2738,8 +2779,8 @@ let repos = [
       inherit repos;
       artifactId = "maven-model";
       groupId = "org.apache.maven";
-      sha512 = "4e7d3561e1c8c9bdf736aaf7115828ffcade3d1d0a009cc09787d93fc2505dadd71e771936f59a5f17e213b89799ed2d281a98aef56d6c6fa02720226a0b85f7";
-      version = "3.8.3";
+      sha512 = "64b96a0f8779efe75103afd1ec685a9e50e810fd51c5afb5e6839fd875365cb61e534818a6ec1119520541e960f63692172d8bdae3d8e63a583558296f9ecb4d";
+      version = "3.8.4";
       
     };
     paths = [ src ];
@@ -2764,8 +2805,8 @@ let repos = [
       inherit repos;
       artifactId = "buddy-sign";
       groupId = "buddy";
-      sha512 = "0fb04dfce4d746c0927c857fff617a1f2905051e97b2157c2656aa2655f9f0be2b3810fb16c3e1397a09e89533670d06b0b46814bc913ba2e382a390beeb8f8b";
-      version = "3.4.1";
+      sha512 = "b71ca0c8e70c2498b043d2f303791305d9aeb9e41c7dfee0c5f11522206efb7db527ffaf8abc0d068325375235fc93fe32bd34102e807a3a79ac5c267764481b";
+      version = "3.4.333";
       
     };
     paths = [ src ];
@@ -2777,8 +2818,8 @@ let repos = [
       inherit repos;
       artifactId = "closure-compiler-unshaded";
       groupId = "com.google.javascript";
-      sha512 = "bfb6b12fcfde011a5cd26e12dc94dc8d0e2b5502922a2abc8b7952aa8ceabaf11fcff641e22e1e919ad913d6130cff9e829e87a006febc1683d4c91a0f22c437";
-      version = "v20210202";
+      sha512 = "bb71ff0784f0151ff6b5ab15e7ee576493eada86a4f9f784befccdc50c8edb27fa6c999330a5c55412fe3fd4f09034fde2bb9c3a45123ce1109a7f3c1d4deff4";
+      version = "v20210808";
       
     };
     paths = [ src ];
@@ -2790,8 +2831,8 @@ let repos = [
       inherit repos;
       artifactId = "reactor-core";
       groupId = "io.projectreactor";
-      sha512 = "a17cdc272e19b3b8b47639dda4d2aca8dbad571380228ee0717ef021c226276d817cb9fc35947d6ace9312528e42d979c2bd8076aa810a635bc7b88e184d92d2";
-      version = "3.3.20.RELEASE";
+      sha512 = "a22a37200a1d05c7f8b977edc44c625845124eef8811f3699eb0a11ac5165128e603a99f6cfd523efdb852bacb98b728ae1b32a07833c0eb342483a1ffe7e9b5";
+      version = "3.3.22.RELEASE";
       
     };
     paths = [ src ];
@@ -2842,8 +2883,8 @@ let repos = [
       inherit repos;
       artifactId = "asm-analysis";
       groupId = "org.ow2.asm";
-      sha512 = "236729bfae1bd1c3f2c2707bbc9967699e03d72ae5b1f284832ae928e7eefcfd1eeb6c31eb11ce6272d9b4ce4fdc91779edb9febe98a72f0f4d71356c028d4ea";
-      version = "9.1";
+      sha512 = "6f40139d81934ee67af8f9d35ebe1415ad8641a3c667dbf38af8d8b17160198b1eb7edf11add986afaa495352966866c64928cbba23273ab83d4f2c5a93d5130";
+      version = "9.2";
       
     };
     paths = [ src ];
@@ -2855,8 +2896,8 @@ let repos = [
       inherit repos;
       artifactId = "log4j-api";
       groupId = "org.apache.logging.log4j";
-      sha512 = "6391788510d015ae2d94527b942cf49a9518e8628932e0a08a1d8a46297499f9cd8a81f7dd99409f69beb06e844f9fc33b6c5c403786202cb3face9e182a5496";
-      version = "2.17.0";
+      sha512 = "48a58c2f317d451ac1622bdfbfa5d3cd9de45d40d5d5df98f39fe6d53c74da56e200f8e3d19a309d4e1ea364369379c0ef9d79b928fc20ea743857f347259c03";
+      version = "2.17.1";
       
     };
     paths = [ src ];
@@ -2868,8 +2909,8 @@ let repos = [
       inherit repos;
       artifactId = "netty-nio-client";
       groupId = "software.amazon.awssdk";
-      sha512 = "9318ec432aa316142ce77ee53210d1d91d53817d3c443c734304fb26dbdb88fafd2a733a685451741d159c898fea1c7a10ed2f65f847a9dfc127aff82734d98c";
-      version = "2.17.40";
+      sha512 = "2f2de66c87385f857cdb79ba66f19bafc1c93f5a9b7f043f2eb144beca2ca50af7a1e67e2a77b8e953e8ed7523777cfd3dcc42d8514e8000228a6794ec5db713";
+      version = "2.17.122";
       
     };
     paths = [ src ];
@@ -2907,8 +2948,8 @@ let repos = [
       inherit repos;
       artifactId = "jsonista";
       groupId = "metosin";
-      sha512 = "ce5c8d67b276920969580b2af06b2c448deb909373cdeb7b871125a6fd424faa952cb5dc8c29e73553858c74a0ecf199f77827148ef8d5f3cd0d6d10a5c5fee1";
-      version = "0.3.3";
+      sha512 = "cdc3f005af6ef8821f6d1d26d6d1cc8300b608d1b8f0e5b6cb54e8f3376506d80e76ebc5818a31c6fa767d5c2561a900b96b5e5e174ce56d9f372f59395b28b1";
+      version = "0.3.5";
       
     };
     paths = [ src ];
@@ -2920,21 +2961,8 @@ let repos = [
       inherit repos;
       artifactId = "uri";
       groupId = "lambdaisland";
-      sha512 = "da7e5accad438283e203f62506a7ef3990bcb8fc22989683c6daf6d88ed7bffb04e16b94f0290d44807a06dbebc343366c09f25cd8b9fcb6da3900c4657a7659";
-      version = "1.4.70";
-      
-    };
-    paths = [ src ];
-  }
-
-  rec {
-    name = "ring-servlet/ring";
-    src = fetchMavenArtifact {
-      inherit repos;
-      artifactId = "ring-servlet";
-      groupId = "ring";
-      sha512 = "a87164834e97ce37675f129baa34bfaf8c4563c6daa5dfa6fd1abc9ebf92cf45920274455912af24bef3e26ff72eef1d778034992e7831fcde34d5f7d845bc56";
-      version = "1.9.2";
+      sha512 = "48b803d913a5698192606de00802304479e5f1b1790dba5368c41ba288b84e9c899fbf4196ba10ecc36d386f8f30b680b463e4100bca6d0fabbabd5d91b8f19f";
+      version = "1.13.95";
       
     };
     paths = [ src ];
@@ -2948,32 +2976,6 @@ let repos = [
       groupId = "org.clojure";
       sha512 = "67196537084b7cc34a01454d2a3b72de3fddce081b72d7a6dc1592d269a6c2728b79630bd2d52c1bf2d2f903c12add6f23df954c02ef8237f240d7394ccc3dde";
       version = "1.0.253";
-      
-    };
-    paths = [ src ];
-  }
-
-  rec {
-    name = "hawk/hawk";
-    src = fetchMavenArtifact {
-      inherit repos;
-      artifactId = "hawk";
-      groupId = "hawk";
-      sha512 = "617ef041b7ef98c96395fd997a0f5f5028db267c4eac367c47a306405ea1eb825f826e42be8aa4462f753d264c52496e39854e4061e9ee40712dde2f57aa9efe";
-      version = "0.2.11";
-      
-    };
-    paths = [ src ];
-  }
-
-  rec {
-    name = "clj-diff/tech.droit";
-    src = fetchMavenArtifact {
-      inherit repos;
-      artifactId = "clj-diff";
-      groupId = "tech.droit";
-      sha512 = "7da0e6142793044fd0ca81fca9c169b9a8e076f6642fda6d68d42cb0021bc2442d6e4c8335dd29e745d4f026763380d199b8d5e21e51659f87ad24872090960b";
-      version = "1.0.1";
       
     };
     paths = [ src ];
@@ -2998,8 +3000,8 @@ let repos = [
       inherit repos;
       artifactId = "maven-repository-metadata";
       groupId = "org.apache.maven";
-      sha512 = "0ad9b30c7d739bcfc02ce9bdfab0fa9f33497818513287900fcf5525231c76e0b0ff4f0a13246a896d85e872a2a8fbb28551dd306604cb930c7850c1837a3930";
-      version = "3.8.3";
+      sha512 = "67f0a5048054e8cf03c608fc846021a3be64b6733595260ccd46796673b2abdebb5afedd9599f7060fb560932e16c6f7637281969a1e7b43d352fde0b99945f3";
+      version = "3.8.4";
       
     };
     paths = [ src ];
@@ -3037,8 +3039,8 @@ let repos = [
       inherit repos;
       artifactId = "java.data";
       groupId = "org.clojure";
-      sha512 = "b9cbd9dd1699d7f767bcffd36b240f26f900f7536451f2ae276058d3c5982cb72089c98b6cdffb287ab7d7446364cfdfcec8fdda432e568c8794d4e4eefcbb1c";
-      version = "1.0.86";
+      sha512 = "225e1eafd1a659278212d831f7cd8609359f8c880ef3d69b4ade6301ce3c511307ce31d94cb82d5407314b990bd04714ec26273bb3036b248116a7a75fa75e1f";
+      version = "1.0.95";
       
     };
     paths = [ src ];
@@ -3063,8 +3065,8 @@ let repos = [
       inherit repos;
       artifactId = "jetty-server";
       groupId = "org.eclipse.jetty";
-      sha512 = "b8655ef10b080571449b21a1769fb214f43711da8122ba1d62dba0f763fdce4ed0a34264c3b9a21e44a046c0400cc37bad3c5dc36c63515861d7956edb1eba68";
-      version = "10.0.6";
+      sha512 = "f460edd02c156bb3d60afc1c65a035294680b9df88d010e2c3382c75727d721c5a82b0b5eecfcb7858de78c57cd038f097c21d0795c81ad7f23bc9f74dffb2cd";
+      version = "10.0.7";
       
     };
     paths = [ src ];
@@ -3089,8 +3091,8 @@ let repos = [
       inherit repos;
       artifactId = "maven-builder-support";
       groupId = "org.apache.maven";
-      sha512 = "8d52795747fbc664901422982f2281592eca8b0222dcdc27d4135fb63b2494af96928f9096eff33a4b843fc1937702aae190011c2e825598d5ecb28343fa34e7";
-      version = "3.8.3";
+      sha512 = "a9dccb93c090840112045e605a4777bc41fe04fe7e518148095ec31078c6d87c8fae312aefd6d35cc1475fd622b361d7010251735c738ccef85b3f42e8c13f1a";
+      version = "3.8.4";
       
     };
     paths = [ src ];
@@ -3154,8 +3156,8 @@ let repos = [
       inherit repos;
       artifactId = "asm-tree";
       groupId = "org.ow2.asm";
-      sha512 = "2e7c7e2453b4453db83aa5f13a7a9ec9fa7896d3b13670b171f6e8f186f3ec2f382a985c69018a510ea1b14a2e986f00e1bd3dd6e77a59a28f82b7fbe738916d";
-      version = "9.1";
+      sha512 = "99291fbf7acb7589cc8426e6cfb22bdd99c0b14c9f2c96843f47cb0cdc2d2f2004a2400c80723562721f5f399a42eeb4d2d4b874c484b0dde974a5f1fa9b7639";
+      version = "9.2";
       
     };
     paths = [ src ];
@@ -3180,8 +3182,8 @@ let repos = [
       inherit repos;
       artifactId = "maven-plugin-api";
       groupId = "org.apache.maven";
-      sha512 = "82a12b14c96c8b041647763d8d7d6b1d43c0d726d3810b67d4bacff3663ba39d782d49edd4fb7df50fbd83b5cdd0674981ff8aebc324406fd5b00163050a2fa0";
-      version = "3.8.3";
+      sha512 = "f3e8881e3ecdba8725583a214f5133fa23aafcb306b0ae43b20f438c483be446a205841e473eb04d641a84dd1ac3647ff1bd25f0ce1b094b9e975a0f7e3758a2";
+      version = "3.8.4";
       
     };
     paths = [ src ];
@@ -3206,8 +3208,8 @@ let repos = [
       inherit repos;
       artifactId = "jackson-dataformat-smile";
       groupId = "com.fasterxml.jackson.dataformat";
-      sha512 = "8998346f7039df868f3387d219efa0c04fc022a948d098296f3d7ac3f7a9a82bde6ec4a8f83b11994ad50318b5aca37781faacb1f20a65ba2ecc6d6d6eb9468e";
-      version = "2.10.2";
+      sha512 = "69676964a2b09516b8ffd0d847b6f9a9b843424185453731b548c25e7e9ce30e808c56d66923f9183e2b5c1ba007421b146a6806e768b8e6b07470d60227f1dd";
+      version = "2.12.4";
       
     };
     paths = [ src ];
@@ -3219,8 +3221,8 @@ let repos = [
       inherit repos;
       artifactId = "jackson-datatype-jsr310";
       groupId = "com.fasterxml.jackson.datatype";
-      sha512 = "5e94b811785c715f6d115edec150054a154aa67b2b497569a05a764df42a0d93db2b943d6c076b0cec0c6abd142eaabe411a77a6b397bf08f694629c31914748";
-      version = "2.12.3";
+      sha512 = "017ac3714d9e53326e1bb8e210f57f5533bb8c366db9a0e2ad8d1a1c09fa3c4140971b85baa2c8b6cf59ca9c200adcb541c0a3da453b662339aff7400b8936c9";
+      version = "2.13.0";
       
     };
     paths = [ src ];
@@ -3232,8 +3234,8 @@ let repos = [
       inherit repos;
       artifactId = "maven-artifact";
       groupId = "org.apache.maven";
-      sha512 = "305174de2499cc68491864c27bd51c1cf91d9bba4e22722a200a60f44864855ea782cde90d5e1b923518e8ae8250245e92e1e4f5f55dc6fbb25430a2ee04c7c8";
-      version = "3.8.3";
+      sha512 = "eae74088cf0ef66ff6cecd5ce6cf476e3df39e167988c1efbaa17f3c88fe55c59451125678cd041517702eb865190cdff64e691313f99c2e2f316e3e1c8a9daf";
+      version = "3.8.4";
       
     };
     paths = [ src ];
@@ -3284,21 +3286,8 @@ let repos = [
       inherit repos;
       artifactId = "annotations";
       groupId = "software.amazon.awssdk";
-      sha512 = "3d61b8c49237a5114a956f59bdd116cc50d18444ef45d4c2f82612d0b2738e2b58afe79dc28d58aa9d6943de6cbda99af242a5e8cbb9cb060f5165a586656c4a";
-      version = "2.17.40";
-      
-    };
-    paths = [ src ];
-  }
-
-  rec {
-    name = "jetty-alpn-server/org.eclipse.jetty";
-    src = fetchMavenArtifact {
-      inherit repos;
-      artifactId = "jetty-alpn-server";
-      groupId = "org.eclipse.jetty";
-      sha512 = "2a7ef1ebf2a8ccd3298f28eab5fd46554ed74c515d74bebb8e8208dc86db6a3e758eecb2f349360a164c1bfef19c2dbab9ad09ac447a9fbe4878e60266bb38ff";
-      version = "10.0.6";
+      sha512 = "6153f0c387d2349bf027ae317a24ca22a85895bd7dfe902d3a3d16e142afcd5c8cf29fd14a039820e0106601bf96ca9593bfec7ddc7b662128d4e7bad0ceb809";
+      version = "2.17.122";
       
     };
     paths = [ src ];

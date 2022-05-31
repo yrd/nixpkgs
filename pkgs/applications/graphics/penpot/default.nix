@@ -6,6 +6,7 @@
 , mkYarnPackage
 , fetchYarnDeps
 , bash
+, jdk
 , clojure
 , nodejs
 , yarn
@@ -13,13 +14,13 @@
 
 let
 	pname = "penpot";
-	version = "1.10.4-beta";
+	version = "1.12.3-beta";
 
 	src = fetchFromGitHub {
     owner = "penpot";
     repo = "penpot";
     rev = version;
-    sha256 = "QhaUNnhFQVUPsqL+aH0XnizBy1Fo6qcpT+JrYc7kGrE=";
+    sha256 = "ElTef6CaYfx2LbrzuWNcrdu9pSPg5FltRh9uxPizmnQ=";
 	};
 
 	extraClasspaths = [ "src" "vendor" "resources" "test" "${src}/common/src" ];
@@ -34,7 +35,7 @@ let
 		yarnLock = src + "/frontend/yarn.lock";
 		offlineCache = fetchYarnDeps {
 			inherit yarnLock;
-	    sha256 = "1vfypzd9qfrl7dq1w5khhwghz424ss46hlchkr91hzfbv251g330";
+	    sha256 = "hHKweuOd4W4KvACArwIKopI95mDb3RLY3YOthNedhG8=";
 		};
 	};
 
@@ -51,7 +52,7 @@ let
 		yarnLock = src + "/exporter/yarn.lock";
 		offlineCache = fetchYarnDeps {
 			inherit yarnLock;
-	    sha256 = "Ar3vX2in91RrcKH+VKOi4PJ+uw5+lDSrVmCdD8HiEmo=";
+	    sha256 = "EagvfxHc+dD+1ylxJoQ7jtPBiyUzoC3uDwG2hV36u9E=";
 		};
 	};
 in
@@ -75,11 +76,10 @@ stdenv.mkDerivation {
     pushd frontend
 		ln -s ${frontendNodeModules}/node_modules .
 		${gulp} clean
-		echo ${frontendClasspath}
-		clojure \
-			-J-Xms100M -J-Xmx800M -J-XX:+UseSerialGC \
-		  -Scp ${frontendClasspath} \
-			-M:dev:shadow-cljs \
+		${jdk}/bin/java -cp ${frontendClasspath} \
+			-Xms100M -Xmx800M -XX:+UseSerialGC \
+			clojure.main \
+		  -m shadow.cljs.devtools.cli \
 			release main --config-merge "{:release-version \"${version}\"}"
 		${gulp} build
 		${gulp} dist:clean

@@ -30189,7 +30189,10 @@ with pkgs;
 
   pdfmixtool = libsForQt5.callPackage ../applications/office/pdfmixtool { };
 
-  penpot = callPackage ../applications/graphics/penpot { };
+  penpot = callPackage ../applications/graphics/penpot rec {
+    # This should be the same JDK as the one in the clojure package.
+    jdk = jdk11;
+  };
 
   pig = callPackage ../applications/networking/cluster/pig { };
 
