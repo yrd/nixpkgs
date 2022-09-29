@@ -30191,7 +30191,7 @@ with pkgs;
 
   penpot = callPackage ../applications/graphics/penpot rec {
     # This should be the same JDK as the one in the clojure package.
-    jdk = jdk11;
+    jdk = jdk17;
   };
 
   pig = callPackage ../applications/networking/cluster/pig { };
