@@ -6,9 +6,7 @@
 , mkYarnPackage
 , fetchYarnDeps
 , bash
-, cacert
 , jdk
-, git
 , clojure
 , nodejs
 , yarn
@@ -25,44 +23,13 @@ let
     sha256 = "sha256-DEvOKC8FGq47UL3eGLdnYKGlHg7Di0gPgDz9hlB9EpU=";
 	};
 
-	clojureDependencies = stdenv.mkDerivation {
-	  inherit version src;
-	  pname = "penpot-deps";
+	extraClasspaths = [
+#	  "src" "vendor" "resources" "test" "${src}/common/src"
+	  "${clojure}/libexec/exec.jar"
+	];
 
-    outputHashMode = "recursive";
-    outputHashAlgo = "sha256";
-    outputHash = "sha256-kGbBiS7U4tpXz5LzHY+hCHnyPzOWYZPwz+Mv8uJYEf8=";
-
-    buildInputs = [ clojure git ];
-    buildPhase = ''
-      export HOME=$(mktemp -d)
-
-      pushd backend
-      clojure -P
-      popd
-
-      pushd frontend
-      clojure -P
-      popd
-
-      pushd exporter
-      clojure -P
-      popd
-    '';
-
-    installPhase = ''
-      ls -al /build
-      mkdir $out
-      #mv /build/.m2 /build/.gitlibs $out/
-      mv /build/.gitlibs $out/
-
-      #find $out/.m2 -type f -regex '.+\(\.lastUpdated\|resolver-status\.properties\|_remote\.repositories\)' -delete
-      #find $out/.m2 -type f -iname '*.pom' -exec sed -i -e 's/\r\+$//' {} \;
-    '';
-
-    GIT_SSL_CAINFO = "${cacert}/etc/ssl/certs/ca-bundle.crt";
-	};
-
+	frontendDeps = callPackage ./frontend/deps.nix { };
+	frontendClasspath = frontendDeps.makeClasspaths { inherit extraClasspaths; };
 	frontendNodeModules = mkYarnModules rec {
 		pname = "penpot-frontend-modules";
 		inherit version;
@@ -75,6 +42,11 @@ let
 		};
 	};
 
+	backendDeps = callPackage ./backend/deps.nix { };
+	backendClasspath = backendDeps.makeClasspaths { inherit extraClasspaths; };
+
+	exporterDeps = callPackage ./exporter/deps.nix { };
+	exporterClasspath = exporterDeps.makeClasspaths { inherit extraClasspaths; };
 	exporterNodeModules = mkYarnModules rec {
 		pname = "penpot-exporter-modules";
 		inherit version;
@@ -94,22 +66,24 @@ stdenv.mkDerivation {
 
 	buildPhase = let
 		gulp = "${frontendNodeModules}/node_modules/.bin/gulp";
+		toolsCp = "${clojure}/libexec/clojure-tools-${clojure.version}.jar";
 	in ''
     runHook preBuild
 
     export HOME=$(mktemp -d)
-    ln -s ${clojureDependencies}/.m2 /build/.m2
-    ln -s ${clojureDependencies}/.gitlibs /build/.gitlibs
     export NODE_ENV=production
-
-    echo ${clojureDependencies}
 
     #
     # Build the backend
     # Reference: https://github.com/penpot/penpot/blob/develop/backend/scripts/build
     #
 		pushd backend
-		clojure -T:build jar
+		#echo ${backendClasspath}
+		java -classpath .:${backendClasspath}:${toolsCp} clojure.main -m clojure.tools.deps.alpha.script.make-classpath2 \
+		  --config-project ./deps.edn --basis-file $HOME/backend.basis
+		cat $HOME/backend.basis
+		echo java -classpath .:${backendClasspath} \
+		  clojure.main -m clojure.run.exec jar
 		popd
 
     #
@@ -119,7 +93,7 @@ stdenv.mkDerivation {
     pushd frontend
 		ln -s ${frontendNodeModules}/node_modules .
 		${gulp} clean
-		clojure \
+		clojure -Scp .:${frontendClasspath} \
 		  -J-Xms100M -J-Xmx800M -J-XX:+UseSerialGC \
 		  -M:dev:shadow-cljs \
 			release main --config-merge "{:release-version \"${version}\"}"
@@ -136,6 +110,7 @@ stdenv.mkDerivation {
     pushd exporter
 		ln -s ${exporterNodeModules}/node_modules .
 		clojure \
+		  -Scp ${exporterClasspath} \
 		  -M:dev:shadow-cljs release main
     patchShebangs target
 		popd
