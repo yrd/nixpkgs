@@ -4,6 +4,7 @@
 , callPackage
 , mkYarnModules
 , mkYarnPackage
+, runCommand
 , fetchYarnDeps
 , bash
 , cacert
@@ -31,7 +32,8 @@ let
 
     outputHashMode = "recursive";
     outputHashAlgo = "sha256";
-    outputHash = "sha256-kGbBiS7U4tpXz5LzHY+hCHnyPzOWYZPwz+Mv8uJYEf8=";
+#    outputHash = lib.fakeSha256;
+    outputHash = "sha256-RrLuDevVblAKkSMKB+LRW6VN22oqnOEM394rhvIQ6ws=";
 
     buildInputs = [ clojure git ];
     buildPhase = ''
@@ -39,26 +41,48 @@ let
 
       pushd backend
       clojure -P
+      clojure -T:build || true
       popd
 
       pushd frontend
       clojure -P
+      clojure -M:dev:shadow-cljs
       popd
 
       pushd exporter
       clojure -P
+      clojure -M:dev:shadow-cljs
       popd
+
+      # Delete anything in the maven dependency tree that has timestamps.
+      find /build/.m2 -type f -regex '.+\(\.lastUpdated\|resolver-status\.properties\|_remote\.repositories\)' -delete
+      find /build/.m2 -type f -iname '*.pom' -exec sed -i -e 's/\r\+$//' {} \;
+
+      # Make the git repositories in the dependency bundle deterministic. See
+      # nixpkgs/pkgs/build-support/fetchgit/deterministic-git for details.
+      find "/build/.gitlibs/" -name .git -type f | while read -r dotGit; do
+        pushd "$(dirname "$dotGit")"
+        git config pack.threads 1 >&2
+        git repack -A -d -f >&2
+        git gc --prune=all --keep-largest-pack >&2
+        popd
+      done
+      find /build/.gitlibs -path "*/worktrees/*/logs/HEAD" -delete
+      find /build/.gitlibs -path "*/worktrees/*/index" -delete
+      find /build/.gitlibs -path "*/hooks/*.sample" -delete
     '';
 
     installPhase = ''
-      ls -al /build
       mkdir $out
-      #mv /build/.m2 /build/.gitlibs $out/
-      mv /build/.gitlibs $out/
-
-      #find $out/.m2 -type f -regex '.+\(\.lastUpdated\|resolver-status\.properties\|_remote\.repositories\)' -delete
-      #find $out/.m2 -type f -iname '*.pom' -exec sed -i -e 's/\r\+$//' {} \;
+      mv /build/.m2 /build/.gitlibs $out/
     '';
+
+    # This makes sure we don't get any store paths in our fixed-output
+    # derivation. Normally the fixup phase would patch the remaining
+    # /build paths into /nix/store/something, but given that we will
+    # symlink everything back into /build when using the dependency
+    # bundle that doesn't really matter here.
+    dontFixup = true;
 
     GIT_SSL_CAINFO = "${cacert}/etc/ssl/certs/ca-bundle.crt";
 	};
@@ -86,11 +110,10 @@ let
 	    sha256 = "sha256-mL/QyGvjdmHWVdztgoFaFAusRUMTD25Iiei1Iy7AbtE=";
 		};
 	};
-in
-stdenv.mkDerivation {
+a= stdenv.mkDerivation {
 	inherit pname version src;
 
-	buildInputs = [ clojure jdk nodejs ];
+	buildInputs = [ clojure git jdk nodejs ];
 
 	buildPhase = let
 		gulp = "${frontendNodeModules}/node_modules/.bin/gulp";
@@ -98,8 +121,8 @@ stdenv.mkDerivation {
     runHook preBuild
 
     export HOME=$(mktemp -d)
-    ln -s ${clojureDependencies}/.m2 /build/.m2
-    ln -s ${clojureDependencies}/.gitlibs /build/.gitlibs
+    cp -r ${clojureDependencies}/.m2 /build/.m2
+    cp -r ${clojureDependencies}/.gitlibs /build/.gitlibs
     export NODE_ENV=production
 
     echo ${clojureDependencies}
@@ -158,4 +181,5 @@ stdenv.mkDerivation {
     license = licenses.mpl20;
     maintainers = with maintainers; [ yrd ];
   };
-}
+};
+in a
